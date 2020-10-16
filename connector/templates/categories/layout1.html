@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    {% if title %}
+        <title>TravelSmart - {{ title }}</title>
+    {% else %}
+        <title>TravelSmart</title>
+    {% endif %}
+
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='adventure.css') }}">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@800&family=Teko&family=Yantramanav:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+     <!-- logo -->
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='logo2.jpg') }}">
+
+
+    <style>
+        {% block style %}
+
+        {% endblock %}
+
+
+
+    </style>
+
+
+</head>
+<body>
+    
+
+
+<div class=navbar>
+    <ul class="navbar-l">
+        <a href="{{ url_for('home') }}" id="home"><li class="nav">Home</li></a>
+        <a href="#"><li class="nav">Hotel</li></a>
+        <a href="#"><li class="nav">Flight</li></a>
+        <a href="#"><li class="nav">Holidays</li></a>
+        <a href="#"><li class="nav">Help</li></a>
+    </ul>
+    <div class="search">
+        <form action="">
+            <input type="search" name="search" placeholder="Search...">
+        </form>
+        <div class="sbutton">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+   
+    <ul class="navbar-l">
+        <a href="{{ url_for('account') }}"><li class="nav">Account</li></a>
+        <a href="{{ url_for('logout') }}"><li class="nav">Logout</li></a>
+    </ul>
+</div>
+
+
+<div class=taskbar>
+
+    <div class="heading">
+        <div class=headblock>
+
+            {% if heading %}
+                <h2>{{ heading }}</h2>
+            {% endif %}
+
+        </div>
+    </div>
+
+
+    <div class="package-container">  
+        {% block content %}
+
+        {% endblock %} 
+    </div>
+
+
+
+    <div class=category>
+        <ul>
+            <li class="categories cathead" id=cat>
+                categories:
+            </li>
+
+        {% if title=='Adventure'%} 
+            <a href="#">
+                <li class="categories active" >
+                    Adventure
+                </li>
+            </a>
+        {% else %}
+            <a href="{{ url_for('adventure') }}">
+                <li class="categories">
+                    Adventure
+                </li>
+            </a>
+        {% endif %}
+
+        {% if title=='Religious'%} 
+            <a href="#">
+                <li class="categories active" >
+                    Religious
+                </li>
+            </a>
+        {% else %}
+            <a href="{{ url_for('religious') }}">
+                <li class="categories">
+                    Religious
+                </li>
+            </a>
+        {% endif %}
+
+        {% if title=='Historical'%} 
+            <a href="#">
+                <li class="categories active" >
+                    Historical
+                </li>
+            </a>
+        {% else %}
+            <a href="{{ url_for('historical') }}">
+                <li class="categories">
+                    Historical
+                </li>
+            </a>
+        {% endif %}
+
+        {% if title=='Environmental'%} 
+            <a href="#">
+                <li class="categories active" >
+                    Environmental
+                </li>
+            </a>
+        {% else %}
+            <a href="{{ url_for('environmental') }}">
+                <li class="categories">
+                    Environmental
+                </li>
+            </a>
+        {% endif %}
+    </ul>
+    </div> 
+
+</div>
+    
+</body>
+</html>

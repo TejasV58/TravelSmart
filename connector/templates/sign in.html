@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'signin_style.css') }}">
+
+    <title>TravelSmart - Login</title>
+
+    <!-- logo -->
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='logo2.jpg') }}">
+
+    <style>
+        .form-control:focus {
+                color: #495057;
+                background-color: #fff;
+                border-color: #007bff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem #008cff4a;
+            }
+
+            .form-control.is-invalid, .was-validated .form-control:invalid{
+                border-width: 1.2px;
+                border-color: #ef717d;
+            }
+
+            .form-control.is-invalid:focus, .was-validated .form-control:invalid:focus{
+                border-color: #dc3545;
+                box-shadow: 0 0 0 0.2rem rgba(241, 22, 43, 0.25);
+            }
+
+            .invalid-feedback {
+                display: none;
+                width: 100%;
+                margin-top: .25rem;
+                font-size: 86%;
+                color: #e50016;
+                font-weight: 500;
+            }
+
+            small{
+                font-size: 15px;
+            }
+    </style>
+    
+</head>
+<body>
+    <div class="box">
+        <h1 style="text-align:center; color:#EA2027; font-size:40px">Sign In</h1>
+        {% with messages=get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category,message in messages %}
+                    <div class='alert alert-{{ category }}'>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action=''>
+            {{ form.hidden_tag() }}                 
+                  
+                <div class="form-group">   
+                    {{ form.email.label(class="form-control-label text") }}
+
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>  
+
+                <div class="form-group">   
+                    {{ form.password.label(class="form-control-label text") }}
+
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>    
+
+                <div class="form-check">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label")}}
+                </div>
+        
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }} 
+                </div>
+                
+                </form>
+            
+                <div class="border-top pt-3">
+                    <p class="">
+                    Don't Have An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up</a>
+                </p>
+                </div>
+
+
+
+
+
+            
+             
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>

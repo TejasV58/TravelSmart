@@ -1,0 +1,216 @@
+{% extends "packages/layout.html" %}
+
+	{% block style %}
+		#image1{
+			background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("{{ url_for('static', filename='environment/goa.jpg') }}");
+			width:100%;
+			height:100%;
+			background-size: cover;
+			background-position: center;
+        }
+
+        #image2{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("{{ url_for('static', filename='environment/goa1.jpg') }}");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image3{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), url("{{ url_for('static', filename='environment/goa2.jpg') }}");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image4{
+			background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("{{ url_for('static', filename='environment/goa3.jpg') }}");
+			width:100%;
+			height:100%;
+			background-size: cover;
+			background-position: center;
+        }
+
+    {% endblock style %}
+	{% block content %}
+
+	<div class="photo-container">
+
+		<div class="photos fade" id="image1">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image2">
+		    <div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image3">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image4">
+			<div class="caption"></div>
+		</div>
+
+
+
+		<a href="#" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a href="#" class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+
+	<div style="text-align:center">
+  		<span class="dot" onclick="currentSlide(1)"></span>
+  		<span class="dot" onclick="currentSlide(2)"></span>
+  		<span class="dot" onclick="currentSlide(3)"></span>
+  		<span class="dot" onclick="currentSlide(4)"></span>
+	</div>
+
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("photos");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		      dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		}
+	</script>
+
+	<div class="information">
+		<div class="imp-points">
+			<div class="point1">
+				<h1 class="heading1">Highlights</h1>
+					<p class="details">
+						<ul class=" highlights">
+							<b>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Famous beaches of Goa</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Goa spice garden</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>World heritage church Basilica of Bom</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Fort Aguada</li>
+							</b>
+						</ul>
+					</p>
+			</div>
+			<div class="point2">
+				<h1 class="heading1">Facilities</h1>
+				<div class="facilities">
+					<div class="facility">
+						<img src="{{ url_for('static', filename='icons/breakfast.png') }}" alt="" class="icons">
+						<p class="icondesc">Breakfast</p>
+					</div>
+					<div class="facility">
+						<img src="{{ url_for('static', filename='icons/dinner1.png') }}" alt="" class="icons">
+						<p class="icondesc">Dinner</p>
+					</div>
+					<div class="facility">
+						<img src="{{ url_for('static', filename='icons/hotel.png') }}" alt="" class="icons">
+						<p class="icondesc">Hotel</p>
+					</div>
+					<div class="facility">
+						<img src="{{ url_for('static', filename='icons/taxi.png') }}" alt="" class="icons">
+						<p class="icondesc">Travel</p>
+					</div>
+					<div class="facility">
+						<img src="{{ url_for('static', filename='icons/sightseeing.png') }}" alt="" class="icons">
+						<p class="icondesc">Sightseeing</p>
+					</div>
+					<div class="facility">
+						<img src="{{ url_for('static', filename='icons/guide.png') }}" alt="" class="icons">
+						<p class="icondesc">Guide</p>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+		<h1 class="heading">Hotel details</h1>
+
+		<div class="hotel">
+			<div class="hotels-info">
+				<div class="hotel-data" id="location">Goa</div>
+				<div class="hotel-data" id="hotel-name">Cidade de goa</div>
+				<div class="hotel-data" id="ratings">
+					<x-star-rating>	
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star full"></div>
+					</x-star-rating>
+				</div>
+				<div class="hotel-data" id="nights">3 nights</div>
+			</div>
+			
+			
+		</div>
+
+		<h1 class="heading">Overview</h1>
+			<p class=details>
+				Goa is a favored tourist destination of people from around the world. With its vast stretches of silvery beaches caressed by the sparkling blue Arabian Sea, this city offers its visitors a medley of old-world charm and modern sophistication. The hidden coves of Goa offer an unexplored territory for the adventurer in you. Despite being the smallest state in India, Goa boasts a quality of life which is ranked No. 1 in the country. Goa is home to two World Heritage sights, namely the Bom Jesus Basilica and the churches and convents of Old Goa. The city has a very vibrant nightlife, ranked 6th in the world. Goa flaunts its Portuguese heritage in the many churches, temples, and mansions spread across the city. The Naval Aviation Museum, Fort Aguada, and the Wax Museum, showcasing the history, heritage and culture of India, are a few of the must-see attractions in Goa. The tantalizing Goan cuisine, made with aromatic spices, is yet another draw to this beautiful city. A kaleidoscopic tropical paradise, there is nowhere else in India quite like Goa
+			</p>
+		<h1 class="heading">Itinerary</h1>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 1</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Arrival at the aiport and transfer from airport to the Hotel </p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 2</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Full day sightseeing covering - Old Goa Churches, Dona Paula, Miramar Beach, Shopping at Panjim, Lunch at Spice Plantation - at extra cost, Mandovi River Cruise at extra cost(On Sharing Basis).</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 3</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Your Full Day is at Leisure. </p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 4</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Transfers from Hotel to Airport (On Sharing Basis).</p>
+			</div>
+		</div>
+
+		
+	</div>
+	<hr>
+	<a href="#">
+		<div class="enquire">
+			ENQUIRE NOW
+		</div>
+	</a>
+{% endblock content %}
+

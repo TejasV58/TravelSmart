@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TravelSmart - CreatePackage</title>
+
+         <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- logo -->
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='logo2.jpg') }}">
+
+        <style>
+            
+            body{
+                background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url("{{ url_for('static', filename='images/travel13.jpg')  }}");
+                background-repeat:none;
+                background-attachment:fixed;
+                background-size:cover;
+            }
+        
+            label{
+                font-size: 17px;
+            }
+            .form1{
+                border-radius: 30px;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 40px 75px;
+                width:600px;
+                margin:70px auto;
+                margin-top:90px;
+                box-shadow:3px 3px 10px;
+            }
+
+            .form-control:focus{
+                color: #495057;
+                background-color: #fff;
+                border-color: #007bff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem #008cff4a;
+            }
+
+            input[type="submit"]{
+                font-size: 20px;
+                background-color:#0984e3;
+                padding:10px 35px;
+                color:white;
+                border:none;
+                margin: 10px 30%;
+                cursor:pointer;
+                border-radius: 50px;
+            }
+            .form-control.is-invalid, .was-validated .form-control:invalid{
+                border-width: 1.2px;
+                border-color: #ef717d;
+            }
+            .form-control.is-invalid:focus, .was-validated .form-control:invalid:focus{
+                border-color: #dc3545;
+                box-shadow: 0 0 0 0.2rem rgba(241, 22, 43, 0.25);
+            }
+            .invalid-feedback {
+                display: none;
+                width: 100%;
+                margin-top: .25rem;
+                font-size: 86%;
+                color: #e50016;
+                font-weight: 500;
+            }
+            .radio-inline ul{
+                padding:0;
+            }
+            .radio-inline li{
+                margin:10px;
+                display: inline-block;
+                list-style-type: none;
+            }
+            small{
+                font-size: 15px;
+            }
+
+            .nav{
+                display:inline-flex;
+                justify-content: space-between;
+                background-color:#22a6b3;
+                width:100%;
+                z-index: 1;
+                position: fixed;
+                top:0px; 
+                overflow: hidden;
+            }
+            .left{
+                float:right;
+
+            }
+            ul{
+                width:100%;
+                list-style-type:none;
+                padding:0;
+                margin:0;
+                overflow:hidden;
+                
+            }
+            li {
+                float:left;
+                *margin:10px;
+                transition:0.2s ease-in;
+            }
+
+            .account a{
+                padding:10px ;
+            }
+
+
+            li.trans:hover {
+                transform:scale(1.1);
+            }
+
+
+            li a{
+                text-decoration:none;
+                display:block;
+                width:11.5vw;
+                background-color:#22a6b3;
+                text-align:center;
+                color:white;
+                padding:20px;
+                font-size:20px;
+                box-sizing:border-box;
+            }
+
+            li a.active{
+                background-color:#6ab04c;
+            }  
+            a:link{
+                text-decoration: none;
+                margin:0;
+            }
+
+
+            li a:hover:not(.active){
+                background-color:#7ed6df;
+                
+            }
+
+            .searchbox{
+                text-decoration:none;
+                width:200px;
+                background-color:#22a6b3;
+                padding:17px;
+                font-size:20px;
+                box-sizing:border-box;
+            }
+
+            .searchbtn{
+                text-decoration:none;
+                width:60px;
+                background-color:#22a6b3;
+                padding:17px;
+                font-size:20px;
+                box-sizing:border-box;
+            }
+
+            .search{
+                float: left;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class='nav'>
+            <ul>
+                <li class="trans"><a href="{{ url_for('home') }}" ><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li class="trans"><a href="#">Hotel</a></li>
+                <li class="trans"><a href="#"><i class="fa fa-plane" style="font-size:21px; margin-right:20px;"></i>Flight</a></li>
+                <li class="trans"><a href="#">Help</a></li>
+                {% if current_user.email=='admin@gmail.com' %}
+                    <li class="trans"><a href="#" class="active">Create Package</a></li>
+                {% endif %}
+                <div class="left">
+                    <li >
+                    <form>
+                            <div class="search searchbox">
+                                <input type="search" name="search" id="ser" placeholder="Search....">
+                            </div>
+                            <div class="search searchbtn">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="trans account"><a href="{{ url_for('account') }}"><img class="rounded-circle account-img" width="60px" height="50px;"  src="{{ image_file }} ">Account</a></li>
+                    <li class="trans"><a href="{{ url_for('logout') }}">Logout</a></li>
+                </div>    
+            </ul>
+        </div>  
+
+        <div class="form1">
+            <h1 style="text-align:center; color:#EA2027; font-size:40px ;margin-bottom: 20px">Package</h1>
+            <form method="POST" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+
+                <div class="form-group">
+                    {{ form.category.label(class="form-control-label") }}
+                    {% if form.category.errors %}
+                        {{ form.category(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.category.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.category(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.title.label(class="form-control-label") }}
+
+                    {% if form.title.errors %}
+                        {{ form.title(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.title(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.duration.label(class="form-control-label") }}
+
+                    {% if form.duration.errors %}
+                        {{ form.duration(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.duration.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.duration(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.cost.label(class="form-control-label") }}
+
+                    {% if form.cost.errors %}
+                        {{ form.cost(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.cost.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.cost(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.info1.label(class="form-control-label") }}
+                    {% if form.info1.errors %}
+                        {{ form.info1(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.info1.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.info1(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.info2.label(class="form-control-label") }}
+                    {% if form.info2.errors %}
+                        {{ form.info2(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.info2.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.info2(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.info3.label(class="form-control-label") }}
+                    {% if form.info3.errors %}
+                        {{ form.info3(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.info3.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.info3(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.info4.label(class="form-control-label") }}
+                    {% if form.info4.errors %}
+                        {{ form.info4(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.info4.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.info4(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.info5.label(class="form-control-label") }}
+                    {% if form.info5.errors %}
+                        {{ form.info5(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.info5.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.info5(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.image_file.label(class="form-control-label") }}
+                    {% if form.image_file.errors %}
+                        {{ form.image_file(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.image_file.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.image_file(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                
+                
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+
+                
+            </form>
+        </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

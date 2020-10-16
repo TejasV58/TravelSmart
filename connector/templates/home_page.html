@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>TravelSmart - Home</title>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'home_page_style.css') }}">
+
+         <!-- logo -->
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='logo2.jpg') }}">
+    </head>
+    
+    <body>
+
+        <div class='nav'>
+            <ul>
+                <li class="trans"><a href="#" class="active"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li class="trans"><a href="#">Hotel</a></li>
+                <li class="trans"><a href="#"><i class="fa fa-plane" style="font-size:21px; margin-right:20px;"></i>Flight</a></li>
+                <li class="trans"><a href="#">Help</a></li>
+                {% if current_user.email=='admin@gmail.com' %}
+                    <li class="trans"><a href="{{ url_for('admin') }}">Create Package</a></li>
+                {% endif %}
+                <div class="left">
+                    <li >
+                    <form>
+                            <div class="search searchbox">
+                                <input type="search" name="search" id="ser" placeholder="Search....">
+                            </div>
+                            <div class="search searchbtn">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="trans account"><a href="{{ url_for('account') }}"><img class="rounded-circle account-img" width="60px" height="50px;"  src="{{ image_file }} ">Account</a></li>
+                    <li class="trans"><a href="{{ url_for('logout') }}">Logout</a></li>
+                </div>    
+            </ul>
+        </div>  
+        
+        
+        <br><br><br>
+
+        {% with messages=get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category,message in messages %}
+                    <div class='alert alert-{{ category }}'>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <div class="images">
+        
+            <div class="gallery" id="image1">
+                <a href="{{ url_for('adventure') }}">
+                <div class="overlay">
+                    <div class="desc">Adventure awaits;go explore it!!</div>
+                </div>
+                <div class="adventure">
+                    <h1>Adventure</h1>
+                </div>
+                </a>
+            </div>
+        
+            <div class="gallery" id="image2">
+                <a href="{{ url_for('religious') }}">
+                <div class="overlay">
+                    <div class="desc">Seek a pious path to divinity by undertaking a religious motive to India's popular pilgrimage places</div>
+                </div>
+                <div class="adventure">
+                    <h1>Religious</h1>
+                </div>   
+                </a>     
+            </div>
+
+            <div class="gallery" id="image3">
+                <a href="{{ url_for('historical') }}">
+                <div class="overlay">
+                    <div class="desc">Lets travel back in time to explore the ancient events of india!</div>
+                </div>   
+                <div class="adventure">
+                    <h1>Historical</h1>
+                </div>  
+                </a>   
+            </div>
+
+
+            <div class="gallery" id=image4>
+                <a href="{{ url_for('environmental') }}">
+                <div class="overlay">
+                    <div class="desc">Enthrall yourself by taking a journey to the flora and fauna rich parts of the country!</div>
+                </div>  
+                <div class="adventure">
+                    <h1>Environmental</h1>
+                </div> 
+                </a>  
+            </div>   
+        </div>
+
+        {% if rpackages %}
+        <h1 class="heading">Packages Recommended for you</h1>
+        <div class="packages">
+            {% for rpackage in rpackages %}
+            <a href="{{url_for('packagedetails',package_id=rpackage.id,category=rpackage.category)}}">
+                <div class="package">
+                    <img src="{{ url_for('static', filename='package-images/'+ rpackage.image_file) }}" alt="" class="rimages">
+                    <div class="title">{{rpackage.title}}</div>
+                </div>
+            </a>    
+            {% endfor %}
+
+        </div>
+        {% endif %}
+
+            
+        
+
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

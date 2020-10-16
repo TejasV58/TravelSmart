@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Golden Triangle</title>
+	<link rel="stylesheet" href="./details-stylesheet.css">
+	 <!-- logo -->
+    <link rel="shortcut icon" type="image/png" href="../images/logo1.jpg">
+
+	<!--icons -->
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!--fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Girassol&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<style>
+		#image1{
+			background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../images/tajmahal.jpeg");
+			width:100%;
+			height:100%;
+			background-size: cover;
+			background-position: center;
+        }
+
+        #image2{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../images/red-fort.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image3{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../religious-packages/hawamahal.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image4{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../religious-packages/rajasthan1.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image5{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../religious-packages/rajasthan2.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+	</style>
+</head>
+<body>
+
+<div class=navbar>
+
+	<ul>
+		<a href="home.html" id="home"><li class="nav">Home</li></a>
+		<a href="#"><li class="nav">Hotel</li></a>
+		<a href="#"><li class="nav">Flight</li></a>
+		<a href="#"><li class="nav">Holidays</li></a>
+		<a href="#"><li class="nav">Help</li></a>
+	</ul>
+	<div class="search">
+		<form action="">
+			<input type="search" name="search" placeholder="Search...">
+		</form>
+	</div>
+	<div class="sbutton">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+
+</div>
+
+
+
+<div class="main">
+	<div class="photo-container">
+
+		<div class="photos fade" id="image1">
+			<div class="caption">Agra</div>
+		</div>
+
+		<div class="photos fade" id="image2">
+		    <div class="caption">Delhi</div>
+		</div>
+
+		<div class="photos fade" id="image3">
+			<div class="caption">Rajasthan</div>
+		</div>
+
+		<div class="photos fade" id="image4">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image5">
+			<div class="caption"></div>
+		</div>
+
+
+
+		<a href="#" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a href="#" class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+
+	<div style="text-align:center">
+  		<span class="dot" onclick="currentSlide(1)"></span>
+  		<span class="dot" onclick="currentSlide(2)"></span>
+  		<span class="dot" onclick="currentSlide(3)"></span>
+  		<span class="dot" onclick="currentSlide(4)"></span>
+  		<span class="dot" onclick="currentSlide(5)"></span>
+	</div>
+
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("photos");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		      dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		}
+	</script>
+
+	<div class="information">
+		<div class="imp-points">
+			<div class="point1">
+				<h1 class="heading1">Highlights</h1>
+					<p class="details">
+						<ul class=" highlights">
+							<b>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Top tourist attractions of Delhi</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>World Heritage Site of Taj Mahal</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Hawa Mahal</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>City Palace</li>
+							</b>
+						</ul>
+					</p>
+			</div>
+			<div class="point2">
+				<h1 class="heading1">Facilities</h1>
+				<div class="facilities">
+					<div class="facility">
+						<img src="../icons/breakfast.png" alt="" class="icons">
+						<p class="icondesc">Breakfast</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/dinner1.png" alt="" class="icons">
+						<p class="icondesc">Dinner</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/hotel.png" alt="" class="icons">
+						<p class="icondesc">Hotel</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/activities.png" alt="" class="icons">
+						<p class="icondesc">Activities</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/taxi.png" alt="" class="icons">
+						<p class="icondesc">Travel</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/sightseeing.png" alt="" class="icons">
+						<p class="icondesc">Sightseeing</p>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+		<h1 class="heading">Hotel details</h1>
+
+		<div class="hotel">
+			<div class="hotels-info">
+				<div class="hotel-data" id="location">Delhi</div>
+				<div class="hotel-data" id="hotel-name">hotel name</div>
+				<div class="hotel-data" id="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star "></div>
+				</x-star-rating>
+				</div>
+				<div class="hotel-data" id="nights">1 night</div>
+			</div>
+			<hr>
+			<div class="hotels-info">
+				<div class="hotel-data" id="location">Agra</div>
+				<div class="hotel-data" id="hotel-name">hotel name</div>
+				<div class="hotel-data" id="ratings">
+					<x-star-rating>	
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star "></div>
+						<div class="star "></div>
+					</x-star-rating>
+				</div>
+				<div class="hotel-data" id="nights">1 night</div>
+			</div>
+			<hr>
+			<div class="hotels-info">
+				<div class="hotel-data" id="location">Jaipur</div>
+				<div class="hotel-data" id="hotel-name">hotel name</div>
+				<div class="hotel-data" id="ratings">
+					<x-star-rating>	
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star half"></div>
+						<div class="star "></div>
+					</x-star-rating>
+				</div>
+				<div class="hotel-data" id="nights">2 nights</div>
+			</div>
+			
+		</div>
+
+		<h1 class="heading">Overview</h1>
+			<p class=details>
+				Golden Triangle tour package spanning over the period of 4 days is your golden ticket to explore the rich heritage, history and culture of India, a cultural razmatazz coupled with unhurried luxury.
+			<br><br>
+				From an array of UNESCO World Heritage SItes to some resplendent forts and palaces in Rajsathan and from the colorful bazaars of Jaipur to the shimmering Taj Mahal in Agra, this tastefully crafted golden triangle tour itinerary is your shortcut to the very soul of India.
+			</p>
+		<h1 class="heading">Itinerary</h1>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 1</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Meet & Greet at the airport arrival lounge where you will receive warm welcome by our representative followed by assisted transfer to hotel. Delhi, capital city of the Federal Republic of India. It is one of India's fastest growing cities. It has sprawled over the West Bank of the river Yamuna, straddling the river. The city has two distinct parts, Old Delhi & New Delhi. Old Delhi is centered on the Red Fort built by Emperor Shah Jahan between 1636 & 1658.
+				<br>	
+				The streets of Old Delhi are narrow & bustling. The beauty & serenity lies inside the courts of the main buildings. Delhi has some of the finest museums in the country. Its boutiques and shopping arcades offer access to a wealth of traditional and contemporary crafts, from all over the country.
+				<br>
+				Overnight stay in a hotel in Delhi</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 2</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Morning combined sightseeing tour of Old and New Delhi. In Old Delhi visit Red Fort see the halls of public and private audiences, Jama Masjid the largest mosque in Asia which forms a hub, enjoy rickshaw ride in Chandni chowk and visit Raj Ghat -the cremation site of Mahatma Gandhi.
+<br><br>
+Following the tour of Delhi we will drive to Agra. also known as the city of The Taj Mahal, is a part of the huge state of Uttar Pradesh. This city is considered hopelessly romantic because of the great monument of Taj Mahals history that graces it with its presence. City of Agra standing on the banks of river of Jamuna is famous for its gracefulness.
+<br><br>
+Upon arrival in Agra check into hotel. Overnight stay in hotel.</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 3</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">At Sunrise we enjoy visit the Taj Mahal and witness its timeless beauty (Please note that the Taj Mahal is closed on Friday). At the brink of dawn when the first rays of the sun hits the dome of this epic monument, it radiates like a heavenly abode, cloaked in bright golden. Taj Mahal of India - "the epitome of love", "a monument of immeasurable beauty". The beauty of this magnificent monument is such that it is beyond the scope of words. The thoughts that come into the mind while watching the Taj Mahal of Agra is not just its phenomenal beauty, but the immense love which was the reason behind its construction. Mughal Emperor Shah Jahan got this monument constructed in the memory of his beloved wife Mumtaz Mahal, with whom he fell in love at the first sight.
+<br><br>
+After breakfast we will visit Agra Fort, situated on the bank of river Yamuna, the Agra Fort today, stands as a citadel of the past that has witnessed centuries slip by. Built in red stone, the Agra fort also known as Red Fort. At Agra Fort you will across a number of mosques and palaces, most of them are built in white marble and red stone during the rein of Akbar, Jehangir and Shah Jahan.
+<br><br>
+Later we will visit Id-Mat-Ud-Dauhla's tomb is also known as Baby of Taj. The tomb is of particular interest since many of its design elephants overshadow the Taj.
+<br><br>
+Following the tour of Agra we drive to Jaipur en-route the deserted city of Fatehpur Sikri. This Mughal city, established by Akbar, has been declared as the world heritage site. After exploring Fatehpur Sikri and visiting its monuments, proceed towards Jaipur, the pink city of Rajasthan.
+<br>
+Overnight stay in your hotel in Jaipur</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 4</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Today we will take an excursion trip to Amber Fort and there we will enjoy the Elephant ride, Amber fort is old erstwhile capital of the Kachwahas Rajputs. This is the only fort where one can still climb from the foothill of the fortress till the top riding on the back of a painted elephant passing through the ancient main gate where Maharaja's of Jaipur have entered for over four hundred years. Enthrall yourself in the architectural masterpiece with its mirror-studded alcoves, dazzling mosaics and water-cooled swings. Its forbidding exterior belies an inner paradise where a beautiful fusion of Mughal and Hindu styles find its ultimate expression. Amber Fort is the classic and romantic fort palace with a magnificent aura.
+<br><br>
+After the Amber Fort visit continue with your sightseeing tour of the "Pink city" and visit Jantar Mantar the largest and best preserved 18th Century stone observatory and its aim was to verify astronomical observations and to generate interest among the public about astronomy, The City Palace which is still home of the former royalty housing an extensive collection of art, carpets and old weapons, it is designed with the combination of the Rajasthani and Mughal architecture and make a photo stop at Hawa Mahal, an example of the architectural magnificence prevalent in that period and is a signature building of Jaipur.
+<br><br>
+Evening we proceed on a tour to local markets. Here we will witness the locals shopping around. Most of the local market shops does not have fixed price and you have to bargain hard to buy the items of your likes at your price. This is the most exciting part of shopping here.
+<br><br>
+Overnight stay in hotel in Jaipur</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 5</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Following a leisurely breakfast we will drive to Delhi.
+<br><br>
+Upon arrival in Delhi transfer to the International airport for your onward flight back home.</p>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<a href="#">
+		<div class="enquire">
+			ENQUIRE NOW
+		</div>
+	</a>
+</div>
+
+<div class="comments">
+	<h1 class="heading2">Top Reviews of Golden Triangle Tour</h1>
+	<div class="positioncomment">
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				5.0
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea corrupti pariatur illo officiis distinctio accusantium aperiam voluptate amet quidem nihil, illum reprehenderit nulla libero ducimus iste eum labore veritatis, ex 
+		</p>
+	</div>
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star "></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				4.0
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, perspiciatis qui illo accusamus repellendus, pariatur iste eum voluptate. Praesentium qui nobis nam ullam eaque nostrum voluptatibus nihil doloremque in q
+		</p>
+	</div>
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star half"></div>
+					<div class="star "></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				3.5
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quod facere, ducimus veniam doloremque mollitia excepturi libero natus dolor. Harum minus sed quidem, quam repellendus, deserunt iste alias
+		</p>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>

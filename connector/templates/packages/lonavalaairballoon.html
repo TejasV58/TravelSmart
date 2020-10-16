@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lonavala Hot Air Balloon</title>
+	<link rel="stylesheet" href="./details-stylesheet.css">
+
+	<!-- logo -->
+    <link rel="shortcut icon" type="image/png" href="../images/logo1.jpg">
+	 
+	<!--icons -->
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!--fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Girassol&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+	<style>
+		#image1{
+			background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../adventure-packages/hotairballoon1.jpg");
+			width:100%;
+			height:100%;
+			background-size: cover;
+			background-position: center;
+        }
+
+        #image2{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../adventure-packages/hotairballoon2.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image3{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../adventure-packages/hotairballoon3.webp");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+	</style>
+</head>
+
+
+<body>
+
+<div class=navbar>
+
+	<ul>
+		<a href="home.html" id="home"><li class="nav">Home</li></a>
+		<a href="#"><li class="nav">Hotel</li></a>
+		<a href="#"><li class="nav">Flight</li></a>
+		<a href="#"><li class="nav">Holidays</li></a>
+		<a href="#"><li class="nav">Help</li></a>
+	</ul>
+	<div class="search">
+		<form action="">
+			<input type="search" name="search" placeholder="Search...">
+		</form>
+	</div>
+	<div class="sbutton">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+
+</div>
+
+
+
+<div class="main">
+	<div class="photo-container">
+
+		<div class="photos fade" id="image1">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image2">
+		    <div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image3">
+			<div class="caption"></div>
+		</div>
+
+
+		<a href="#" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a href="#" class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+
+	<div style="text-align:center">
+  		<span class="dot" onclick="currentSlide(1)"></span>
+  		<span class="dot" onclick="currentSlide(2)"></span>
+  		<span class="dot" onclick="currentSlide(3)"></span>
+	</div>
+
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("photos");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		      dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		}
+</script>
+
+<div class="information">
+	<div class="imp-points">
+		<div class="point1">
+			<h1 class="heading1">Highlights</h1>
+				<p class="details">
+					<ul class=" highlights">
+						<b>
+							<li><i class="fa fa-check" aria-hidden="true"></i>Fly High with Exciting Hot Air Balloon Experience
+							</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i>One of the world's great balloon flights</li>
+							<li><i class="fa fa-check" aria-hidden="true"></i>Famous Lonavala spots</li>
+						</b>
+					</ul>
+				</p>
+		</div>
+		<div class="point2">
+			<h1 class="heading1">Facilities</h1>
+			<div class="facilities">
+				<div class="facility">
+					<img src="../icons/dinner1.png" alt="" class="icons">
+					<p class="icondesc">Dinner</p>
+				</div>
+				<div class="facility">
+					<img src="../icons/activities.png" alt="" class="icons">
+					<p class="icondesc">Activities</p>
+				</div>
+				<div class="facility">
+					<img src="../icons/taxi.png" alt="" class="icons">
+					<p class="icondesc">Travel</p>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+
+
+	<h1 class="heading">Overview</h1>
+		<p class=details>
+			About Hot Air Balloon Safari, Lonavala:
+
+			Take off on an unforgettable flight high in the sky with this hot air balloon safari in Lonavala. It is located in the misty Sahyadris which adds a stunning view to the experience. It is located at a close distance from both Mumbai and Pune. The hot air balloon ride happens at different time slots all through the year and lasts for an unforgettable hour.
+			<br><br>
+			Pickup from Common Meeting Point ( Hotel Orritel, Talegaon) followed by a short safety briefing by the pilot along with Tea/Coffee and light refreshments are served. Duration of flight will be approximately 60 minutes (+/- 15 minutes) of flight time. Post the activity, first flight Certificate handed over to the guests. Guests are free to stay for as long as they would like after the Balloon has landed, where they have an option to interact with local villagers and watch the Balloon being deflated. Customised breakfast package services can be requested at an additional cost about which the tour operator should be informed in advance .Packaged drinking water will be provided on board
+			<br><br>
+
+			The activity of Hot Air Balloon ride in Lonavala can be availed at the following timings:
+			<br><br>
+			<b>October-November</b>: 6:15 AM <br>
+			<b>December-February</b>:   6:45 AM & 4 PM <br>
+			<b>March-May</b>: 6:15 AM <br>
+			<br>
+			<b>Duration of Hot Air Balloon Safari, Lonavala:</b> 1 hour
+			<br><br>
+			<b>Meeting point:</b> Hotel Orritel, Talegaon
+			<br><br>
+			<b>Package Offers:</b> To & fro transport starting from Meeting Point, Tea/coffee with cookies before Safari, Balloon Safari.  
+			<br><br>
+			<b>Child Policy:</b> Children are not allowed in this activity. 
+
+		</p>	
+	<hr>
+	<a href="#">
+		<div class="enquire">
+			ENQUIRE NOW
+		</div>
+	</a>
+
+</div>
+</div>
+</div>
+
+<div class="comments">
+	<h1 class="heading2">Top Reviews of Lonavala Hot Air Balloon</h1>
+	<div class="positioncomment">
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				5.0
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea corrupti pariatur illo officiis distinctio accusantium aperiam voluptate amet quidem nihil, illum reprehenderit nulla libero ducimus iste eum labore veritatis, ex 
+		</p>
+	</div>
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star "></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				4.0
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, perspiciatis qui illo accusamus repellendus, pariatur iste eum voluptate. Praesentium qui nobis nam ullam eaque nostrum voluptatibus nihil doloremque in q
+		</p>
+	</div>
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star half"></div>
+					<div class="star "></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				3.5
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quod facere, ducimus veniam doloremque mollitia excepturi libero natus dolor. Harum minus sed quidem, quam repellendus, deserunt iste alias
+		</p>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>

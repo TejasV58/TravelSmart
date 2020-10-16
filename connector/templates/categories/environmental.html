@@ -1,0 +1,209 @@
+{% extends 'categories/layout1.html' %}
+
+    {% block style %}
+
+        .headblock{
+            width:32vw;
+        }
+    
+
+    {% endblock %}
+ 
+
+{% block content %}
+
+    {% for package in packages %}
+    <div class="packages" id=pack1>
+        <img class=pack-img src="{{ url_for('static',filename='package-images/' + package.image_file ) }}" alt="hot-air-balloon" >
+        <div class=img-desc>
+            <p class="desc">{{ package.title }}</p>
+            <p class=duration>Duration : {{ package.duration }}</p>
+            <p class="cost"> ₹{{ package.cost }} per person</p>
+
+            {% if ratings %}
+                {% for r in ratings %}
+                    {% if r.id==package.id %}
+                        <div class="hotel-data" id="ratings">
+                            <x-star-rating> 
+                                {% for stars in range(r.rating) %}
+                                    <div class="star full"></div>
+                                {% endfor %}
+                                {% for stars in range(5 - r.rating)  %}
+                                <div class="star"></div>
+                                {% endfor %}
+                            </x-star-rating>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="middle">
+            <ul>
+                <li class="info">{{ package.info1 }}</li>
+                <li class="info">{{ package.info2 }}</li>
+                <li class="info">{{ package.info3 }}</li>
+
+                {% if package.info4 %}
+                 <li class="info">{{ package.info4 }}</li>
+                {% endif %}
+               
+                {% if package.info5 %}
+                <li class="info">{{ package.info5 }}</li>
+                {% endif %}
+            </ul>
+        </div>
+        <div>
+            <a href="{{ url_for('packagedetails', package_id=package.id, category=package.category) }}" target="_blank" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+    {% endfor %}
+    
+
+
+    <div class="packages" id=pack3>
+        <img class=pack-img src="{{url_for('static',filename='images/rajasthan-desert.jpg')}}" alt="Rajasthan-desert" >
+        <div class=img-desc>
+            <p class="desc">Rajasthan Desert Safari</p>
+            <p class=duration>duration: 4 Days</p>
+            <p class="cost">₹20,000 per person</p>
+            <div class="hotel-data" id="ratings">
+                <x-star-rating> 
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star "></div>
+                </x-star-rating>
+            </div>
+        </div>
+        <div class="middle">
+            <ul>
+                <li class="info">1</li>
+                <li class="info">2</li>
+                <li class="info">3</li>
+                <li class="info">4</li>
+            </ul>
+        </div>
+        <div>
+            <a href="#" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+
+
+
+    <div class="packages" id=pack4>
+        <img class=pack-img src="{{url_for('static',filename='images/sikkim.jpg')}}" alt="Sikkim" >
+        <div class=img-desc>
+            <p class="desc">Sikkim Darjeeling Tour</p>
+            <p class=duration>duration: 7 Days</p>
+            <p class="cost">₹55,000 per person</p>
+            <div class="hotel-data" id="ratings">
+                <x-star-rating> 
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star "></div>
+                </x-star-rating>
+            </div>
+        </div>  
+        <div class="middle">
+            <ul>
+                <li class="info">1</li>
+                <li class="info">2</li>
+                <li class="info">3</li>
+                <li class="info">4</li>
+            </ul>
+        </div> 
+        <div>
+            <a href="#" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+
+
+    <div class="packages" id=pack5>
+        <img class=pack-img src="{{url_for('static',filename='images/andaman-nicobar.jpg')}}" alt="Andaman-Nicobar" >
+        <div class=img-desc>
+            <p class="desc">Andaman and Nicobar </p>
+            <p class=duration>duration: 6 Days</p>
+            <p class="cost">₹25,000 per person</p>
+            <div class="hotel-data" id="ratings">
+                <x-star-rating> 
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star "></div>
+                </x-star-rating>
+            </div>
+        </div>  
+        <div class="middle">
+            <ul>
+                <li class="info">1</li>
+                <li class="info">2</li>
+                <li class="info">3</li>
+                <li class="info">4</li>
+            </ul>
+        </div> 
+        <div>
+            <a href="#" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+
+
+    <div class="packages" id=pack6>
+        <img class=pack-img src="{{url_for('static',filename='images/kasauli.jpg')}}" alt="kasauli" >
+        <div class=img-desc>
+            <p class="desc">Kasauli hill station</p>
+            <p class=duration>duration: 3 Days</p>
+            <p class="cost">₹12,000 per person</p>
+            <div class="hotel-data" id="ratings">
+                <x-star-rating> 
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star "></div>
+                </x-star-rating>
+            </div>
+        </div>  
+        <div class="middle">
+            <ul>
+                <li class="info">1</li>
+                <li class="info">2</li>
+                <li class="info">3</li>
+                <li class="info">4</li>
+            </ul>
+        </div> 
+        <div>
+            <a href="#" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

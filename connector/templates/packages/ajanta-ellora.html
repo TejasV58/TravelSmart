@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajanta Ellora</title>
+	<link rel="stylesheet" href="./details-stylesheet.css">
+	 <!-- logo -->
+    <link rel="shortcut icon" type="image/png" href="../images/logo1.jpg">
+
+	<!--icons -->
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!--fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Girassol&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<style>
+		#image1{
+			background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../historical-packages/ajanta.jpg");
+			width:100%;
+			height:100%;
+			background-size: cover;
+			background-position: center;
+        }
+
+        #image2{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../historical-packages/ajanta1.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image3{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../historical-packages/ajanta3.jpeg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+
+        #image4{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../historical-packages/ellora 2.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image5{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../historical-packages/bibi ka maqbara.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+		
+		#image6{
+			background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../historical-packages/daulatabad.jpg");
+			width:100%;
+			height:100%;
+			background-size: cover;
+			background-position: center;
+        }
+
+
+	</style>
+</head>
+<body>
+
+<div class=navbar>
+
+	<ul>
+		<a href="home.html" id="home"><li class="nav">Home</li></a>
+		<a href="#"><li class="nav">Hotel</li></a>
+		<a href="#"><li class="nav">Flight</li></a>
+		<a href="#"><li class="nav">Holidays</li></a>
+		<a href="#"><li class="nav">Help</li></a>
+	</ul>
+	<div class="search">
+		<form action="">
+			<input type="search" name="search" placeholder="Search...">
+		</form>
+	</div>
+	<div class="sbutton">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+
+</div>
+
+
+
+<div class="main">
+	<div class="photo-container">
+
+		<div class="photos fade" id="image1">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image2">
+		    <div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image3">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image4">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image5">
+		    <div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image6">
+			<div class="caption"></div>
+		</div>
+
+
+		<a href="#" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a href="#" class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+
+	<div style="text-align:center">
+  		<span class="dot" onclick="currentSlide(1)"></span>
+  		<span class="dot" onclick="currentSlide(2)"></span>
+  		<span class="dot" onclick="currentSlide(3)"></span>
+  		<span class="dot" onclick="currentSlide(4)"></span>
+  		<span class="dot" onclick="currentSlide(5)"></span>
+  		<span class="dot" onclick="currentSlide(6)"></span>
+	</div>
+
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("photos");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		      dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		}
+	</script>
+
+	<div class="information">
+		<div class="imp-points">
+			<div class="point1">
+				<h1 class="heading1">Highlights</h1>
+					<p class="details">
+						<ul class=" highlights">
+							<b>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Ajanta and Ellora Caves</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Daulatabad Fort</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Aurangabad Caves</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Taj Mahal’s replica, Bibi ka Maqbara</li>
+							</b>
+						</ul>
+					</p>
+			</div>
+			<div class="point2">
+				<h1 class="heading1">Facilities</h1>
+				<div class="facilities">
+					<div class="facility">
+						<img src="../icons/breakfast.png" alt="" class="icons">
+						<p class="icondesc">Breakfast</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/dinner1.png" alt="" class="icons">
+						<p class="icondesc">Dinner</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/hotel.png" alt="" class="icons">
+						<p class="icondesc">Hotel</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/transport.png" alt="" class="icons">
+						<p class="icondesc">Transport</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/sightseeing.png" alt="" class="icons">
+						<p class="icondesc">Sightseeing</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/guide.png" alt="" class="icons">
+						<p class="icondesc">Guide</p>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+		<h1 class="heading">Hotel details</h1>
+
+		<div class="hotel">
+			<div class="hotels-info">
+				<div class="hotel-data" id="location">Aurangabad</div>
+				<div class="hotel-data" id="hotel-name">hotel name</div>
+				<div class="hotel-data" id="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star "></div>
+				</x-star-rating>
+				</div>
+				<div class="hotel-data" id="nights">3 Nights</div>
+			</div>
+			
+		</div>
+
+		<h1 class="heading">Overview</h1>
+			<p class=details>
+				Ajanta and Ellora Caves are repository of ancient Indian architecture. The caves at Ajanta are all Buddhist, while the caves at Ellora are a mixture of Buddhist, Hindu and Jain. Etched out during the 2nd century BC and 8th century AD, Ajanta and Ellora caves are the two most fascinating tourist destinations of India. Astonishingly carved out of the mountains using only hammers and clisels by hand, these magnificent rock cavern was first discovered by a British Army Officer named, John Smith in the year 1819. Explore this magnificent repository of culture and testimony to power of human imagination during your Ajanta Caves tour itinerary.
+			</p>
+		<h1 class="heading">Itinerary</h1>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 1</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Aurangabad is one of the many modern Indian cities with a distinct historical background that still breathes through the modernity. On arrival in the city during your holidays in Maharashtra, our representative will help you to check into the hotel that has been pre-booked for you, where you could spend some time to refresh yourself before you embark on the city tours. The first destination that you could visit is the Daulatabad Fort. Once a seat of the Hindu rulers, this fort was captured and destroyed by the Hindu rivals around the 13th century AD. Nevertheless, it still stands tall to tell the tales of conspiracy and deceit of which even this massive fort had once fallen a prey to. Post this trail; visit the Pan Chakki, a relatively new creation dating back to the last part of the 16th century. An engineering wonder, the Pan Chakki channels water from a distant spring to run grain grinders for pilgrims.</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 2</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Post early morning breakfast, proceed towards the mesmerizing Ellora caves, located at about a distance of 30 km from the Aurangabad city. Built by the Rastrakuta kings, the Ellora caves perhaps exhibit the highest examples of India’s rock-cut architecture. Noted for its exquisite carvings and illustrative figurines, the Ellora Caves house in its midst ­- temples and monasteries belonging to 3 distinct faiths including Hinduism and Buddhism, besides Jainism. The detailing of the intricate carvings actually makes one wonder that man is indeed capable of doing even the impossible. With limited tools, but loads of imagination and creativity; the artists of the era have indeed achieved more than the impossible. Visit the Kailash temple, the largest monolithic structure in the world to believe what we say. Post lunch travel around Aurangabad and visit the local attractions including the Bibi ka Maqbara, a monument dedicated to the queen of Aurangzeb, Begum Rabia Durrani. Built by her son, this monument almost replicates the Taj Mahal of Agra through its designing. The inspiration for fountains and the backdrop of well manicured gardens have definitely been derived from the Taj itself.
+
+</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 3</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Post breakfast, embark on a short excursion to the Ajanta caves. Located in the Shahyadri hills, the Ajanta caves enjoy the status of being a world heritage site. The highlight of the Ajanta caves lies in the exotic paintings that adorn the walls and ceilings of the caves. Partly lost to time and excavations, these paintings nevertheless tell a million tales. Primarily depicting Buddhism practices dating back to 650 BC - 200 BC, the paintings are fine specimens of the combination of artistic talents and mineral dyes. These caves were accidentally discovered by a group of British officers who were on a tiger hunting spree around the early part of the 19th century AD. Hidden amidst the dense forests of the Shahyadri, these caves have been standing still for centuries waiting for someone to come and explore them. No wonder, tourists flock to them in large numbers throughout the year.  </p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 4</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">On the 4th day of the tour, have a leisurely breakfast and embark on your journey, back home. This brings your Ajanta – Ellora cave tour to an end.</p>
+			</div>
+		</div>
+
+	</div>
+	<hr>
+	<a href="#">
+		<div class="enquire">
+			ENQUIRE NOW
+		</div>
+	</a>
+</div>
+
+<div class="comments">
+	<h1 class="heading2">Top Reviews of Ajanta Ellora Tour</h1>
+	<div class="positioncomment">
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				5.0
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea corrupti pariatur illo officiis distinctio accusantium aperiam voluptate amet quidem nihil, illum reprehenderit nulla libero ducimus iste eum labore veritatis, ex 
+		</p>
+	</div>
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star "></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				4.0
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, perspiciatis qui illo accusamus repellendus, pariatur iste eum voluptate. Praesentium qui nobis nam ullam eaque nostrum voluptatibus nihil doloremque in q
+		</p>
+	</div>
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star half"></div>
+					<div class="star "></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				3.5
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quod facere, ducimus veniam doloremque mollitia excepturi libero natus dolor. Harum minus sed quidem, quam repellendus, deserunt iste alias
+		</p>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>

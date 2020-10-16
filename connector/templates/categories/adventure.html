@@ -1,0 +1,59 @@
+{% extends 'categories/layout1.html' %}
+
+{% block content %}
+    
+    {% for package in packages %}
+    <div class="packages" id=pack1>
+        <img class=pack-img src="{{ url_for('static',filename='package-images/' + package.image_file ) }}" alt="hot-air-balloon" >
+        <div class=img-desc>
+            <p class="desc">{{ package.title }}</p>
+            <p class=duration>Duration : {{ package.duration }}</p>
+            <p class="cost"> ₹{{ package.cost }} per person</p>
+
+           {% if ratings %}
+                {% for r in ratings %}
+                    {% if r.id==package.id %}
+                        <div class="hotel-data" id="ratings">
+                            <x-star-rating> 
+                                {% for stars in range(r.rating) %}
+                                    <div class="star full"></div>
+                                {% endfor %}
+                                {% for stars in range(5 - r.rating)  %}
+                                <div class="star"></div>
+                                {% endfor %}
+                            </x-star-rating>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="middle">
+            <ul>
+                <li class="info">{{ package.info1 }}</li>
+                <li class="info">{{ package.info2 }}</li>
+                <li class="info">{{ package.info3 }}</li>
+
+                {% if package.info4 %}
+                 <li class="info">{{ package.info4 }}</li>
+                {% endif %}
+               
+                {% if package.info5 %}
+                <li class="info">{{ package.info5 }}</li>
+                {% endif %}
+            </ul>
+        </div>
+        <div>
+            <a href="{{ url_for('packagedetails', package_id=package.id, category=package.category) }}" target="_blank" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+
+
+    
+
+
+
+{% endblock %}

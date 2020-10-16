@@ -1,0 +1,270 @@
+body{
+    background-image:url('images/blue16.jpg');
+      background-repeat:none;
+      background-attachment:fixed;
+      background-size:cover;
+
+}
+
+.nav{
+    display:inline-flex;
+    justify-content: space-between;
+    background-color:#22a6b3;
+    width:100%;
+    z-index: 1;
+    position: fixed;
+    top:0px; 
+    overflow: hidden;
+}
+.left{
+    float:right;
+
+}
+ul{
+    width:100%;
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    
+}
+li {
+    float:left;
+    *margin:10px;
+    transition:0.2s ease-in;
+}
+
+.account a{
+    padding:10px ;
+}
+
+
+li.trans:hover {
+    transform:scale(1.1);
+}
+
+
+li a{
+    text-decoration:none;
+    display:block;
+    width:11.5vw;
+    background-color:#22a6b3;
+    text-align:center;
+    color:white;
+    padding:20px;
+    font-size:20px;
+    box-sizing:border-box;
+}
+
+  li a.active{
+    background-color:#6ab04c;
+}  
+a:link{
+    text-decoration: none;
+    margin:0;
+}
+
+
+li a:hover:not(.active){
+    background-color:#7ed6df;
+    
+}
+
+.searchbox{
+    text-decoration:none;
+    width:200px;
+    background-color:#22a6b3;
+    padding:17px;
+    font-size:20px;
+    box-sizing:border-box;
+}
+
+.searchbtn{
+    text-decoration:none;
+    width:60px;
+    background-color:#22a6b3;
+    padding:17px;
+    font-size:20px;
+    box-sizing:border-box;
+}
+
+.search{
+    float: left;
+}
+
+.images{
+    height:110vh;
+    margin:40px auto;
+    margin-top: 80px;
+}
+
+div.gallery{
+    border: 1px solid #ccc;
+    width:500px;
+    height:350px;
+    margin:10px 80px 50px 80px;
+    float:left;
+    box-shadow:5px 5px 20px 5px; 
+    position:relative;
+    box-sizing:border-box;
+}
+
+    div.gallery:hover{
+    border:1px solid black;
+}
+
+div.desc{
+    text-align:center;
+    font-size:30px;
+    overflow:hidden;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-decoration:none;
+    color:white;
+}
+
+div.gallery img{
+    width:100%;
+    height:350px;
+    background-size:cover;
+    
+}
+
+#image1{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("adventure-trips.jpg");
+    width:500px ;
+    height:350px;
+    background-position:center;
+    background-size:cover;
+}
+
+
+#image2{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("meenakshi-temple.jpg");
+    width:500px ;
+    height:350px;
+    background-position:center;
+    background-size:cover;
+}
+
+
+#image3{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("fort.jpg");
+    width:500px ;
+    height:350px;
+    background-position:center;
+    background-size:cover;
+}
+
+
+#image4{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("kerala-backwaters.jpg");
+    width:500px ;
+    height:350px;
+    background-position:center;
+    background-size:cover;
+}
+
+
+div.overlay{
+    position:absolute;
+    bottom:100%;
+    left:0;
+    right:0;
+    background-color: rgba(52, 152, 219,0.5);
+    overflow:hidden;
+    width:100%;
+    height:0;
+    transition:0.5s ease;
+}
+.gallery:hover .overlay{
+    bottom:0;
+    height:100%;
+} 
+.gallery:hover .adventure{
+    opacity:0;
+}
+
+.adventure{
+    position:absolute;
+    top:50%;
+    left:50%;
+    color:rgba(255, 196, 0,1);
+    font-size:25px;
+    text-align:center;
+    transform:translate(-50%,-50%);
+}
+
+.review{
+    background-color:rgba(255,255,255,0.3);
+    position:absolute;
+    top:1000px;
+    width:90vw;
+    height:560px;
+    float:left;
+    left:4.5vw;
+    box-sizing:border-box;
+    margin-bottom:100px;
+    box-shadow:5px 5px 20px 5px;
+}
+
+.packages{
+    margin:40px;
+    margin-top: 20px;
+    margin-right:10px;
+    width:93vw;
+    padding:10px;
+    
+}
+
+.package{
+    position: relative;
+    float:left;
+    padding:0;
+    overflow: hidden;
+    margin:20px;
+    width:20vw;
+    height:40vh;
+    border:1px solid black;
+}
+.rimages{
+    padding: 0;
+    width:100%;
+    margin:0;
+    height:100%;
+    z-index: 0;
+    display:inline-block;
+    transition: 0.5s ease;
+}
+.rimages:hover{
+    transform: scale(1.2);
+}
+.title{
+    position: absolute;
+    bottom:0;
+    margin:0;
+    width:100%;
+    z-index: 1;
+    padding:12px;
+    text-align: center;
+    box-sizing: border-box;
+    background:rgba(0,0,0,0.6);
+    color:white;
+    font-weight: 700;
+    font-size: 22px;
+}
+.heading{
+    padding:10px;
+    color:white;
+    border-radius: 5px;
+    display:inline-block;
+    background-color: #22a6b3;
+    margin:10px 40px;
+
+}
+
+
+
+

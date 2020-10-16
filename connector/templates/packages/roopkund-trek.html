@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Roopkund Trek</title>
+	<link rel="stylesheet" href="./details-stylesheet.css">
+	 <!-- logo -->
+    <link rel="shortcut icon" type="image/png" href="../images/logo1.jpg">
+
+	<!--icons -->
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!--fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Girassol&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<style>
+		#image1{
+			background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../adventure-packages/roopkund1.jpg");
+			width:100%;
+			height:100%;
+			background-size: cover;
+			background-position: center;
+        }
+
+        #image2{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../adventure-packages/roopkund2.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image3{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../adventure-packages/roopkund3.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+   		#image4{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../adventure-packages/roopkund4.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+	</style>
+</head>
+<body>
+
+<div class=navbar>
+
+	<ul>
+		<a href="home.html" id="home"><li class="nav">Home</li></a>
+		<a href="#"><li class="nav">Hotel</li></a>
+		<a href="#"><li class="nav">Flight</li></a>
+		<a href="#"><li class="nav">Holidays</li></a>
+		<a href="#"><li class="nav">Help</li></a>
+	</ul>
+	<div class="search">
+		<form action="">
+			<input type="search" name="search" placeholder="Search...">
+		</form>
+	</div>
+	<div class="sbutton">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+
+</div>
+
+
+
+<div class="main">
+	<div class="photo-container">
+
+		<div class="photos fade" id="image1">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image2">
+		    <div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image3">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image4">
+			<div class="caption"></div>
+		</div>
+
+
+		<a href="#" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a href="#" class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+
+	<div style="text-align:center">
+  		<span class="dot" onclick="currentSlide(1)"></span>
+  		<span class="dot" onclick="currentSlide(2)"></span>
+  		<span class="dot" onclick="currentSlide(3)"></span>
+  		<span class="dot" onclick="currentSlide(4)"></span>
+	</div>
+
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("photos");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		      dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		}
+	</script>
+
+	<div class="information">
+		<div class="imp-points">
+			<div class="point1">
+				<h1 class="heading1">Highlights</h1>
+					<p class="details">
+						<ul class=" highlights">
+							<b>
+								<li><i class="fa fa-check" aria-hidden="true"></i>The most popular of them all</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Magnificent views of Mt Trishul and Mt Nanda Ghunti</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>The dense oak forests of Ghairoli</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Alpine meadows of Ali Bugyal and Bedni Bugyal</li>
+							</b>
+						</ul>
+					</p>
+			</div>
+			<div class="point2">
+				<h1 class="heading1">Facilities</h1>
+				<div class="facilities">
+					<div class="facility">
+						<img src="../icons/breakfast.png" alt="" class="icons">
+						<p class="icondesc">Breakfast</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/dinner1.png" alt="" class="icons">
+						<p class="icondesc">Dinner</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/hotel.png" alt="" class="icons">
+						<p class="icondesc">Accomodation</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/activities.png" alt="" class="icons">
+						<p class="icondesc">Activities</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/transport.png" alt="" class="icons">
+						<p class="icondesc">Transport</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/guide.png" alt="" class="icons">
+						<p class="icondesc">Guide</p>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+		<h1 class="heading">Overview</h1>
+			<p class=details>
+				If you’re trekking in India, the Roopkund trek is a must-do! It’s got everything going for it.
+				 Deep virgin forests, gurgling brooks, breath-taking campsites, miles of undulating meadows
+				, snow and ice and the taste of a great adventure as you climb from 8,000 ft to 16,000 ft in six days. <br><br>
+
+				Roopkund, perhaps the most popular trek in India, is almost picture perfect. The Roopkund trail climbs out of splendid dark forests suddenly bursting into Ali and Bedni Bugyal, arguably India’s most beautiful high altitude meadows. Out of the meadows the trail quickly gets into terrific alpine stretches.
+				Climbing on snow to the Roopkund lake is a heart-pounding thrill. The beautiful Mt Trishul looms over the setting getting closer as you climb higher, when at a ridge above Roopkund, only air separates the trekker from them and Trishul.
+			</p>
+		<h1 class="heading">Itinerary</h1>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 1</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">
+					Arrival at Kathgodam, Drive to Lohajung (7-8 Hrs)
+					After your arrival in Kathgodam, you will be met by our representative who will transfer you to the guesthouse in Lohajung, which is also the starting point of this trek.
+					<br>
+					Overnight at Lohajung
+			</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 2</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">
+					Trek from Lohajung to Didna Village
+					Lohajung Pass, Bedni Ganga River
+					<br><br>
+
+					Today you will begin with the trek to Roopkund Glacier Lake! Take the Lord Curzon trail from Lohajung and follow a steady uphill trek through the Lohajung Pass, which eventually leads to a downhill trail to the Bedni River. Cross the bridge over the river and traverse through mixed forests of oak and bamboo to arrive at Didna Village. This is your first base camp on the trek route; overnight stay in tents.
+				</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 3</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">
+					Trek from Didna Village to Ali Bugyal
+Steep Trek, Oak & Bamboo Forests, Garhwal Himalayas
+<br><br>
+After a wholesome breakfast, leave the basecamp and begin with a steep ascend through oak forests and long stands of bamboo. Admire the stunning views of the Garhwal Himalayan ranges as they appear ahead of you. Arrive at one of the finest camping grounds with stunning views on this side of the Himalayas as you enter open alpine grazing meadows of Ali Bugyal; overnight stay in here.
+				</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 4</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Trek from Ali Bugyal to Ghora Lotani
+Easy Trek, Panoramic Himalayas, Magpie
+<br><br>
+Today’s trek will be an easier one and will take you to the other side of the ridge; a keen eye can spot a Himalayan Magpie on the way. After a few hours of trekking, arrive at Ghora Lotani, which is yet again the most fascinating of destinations along the Roopkund trek; overnight camping in Ghora Lotani.</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 5</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Trek from Ghora Lotani to Bhagwabasa
+High Altitude Trekking, Barren Campsite, Icy Winds
+<br><br>
+Following today’s breakfast in the camp, start with the trek for the day. Today, as you proceed forward, you will be gaining height from 12,500-14,500ft. Be prepared for some challenges offered by high altitudes, zigzag passes and icy cold winds. Passing through Kalu Vinayak, you will finally reach Bhagwabasa (4,100m) campsite in a desolate and barren landscape; overnight stay in tents.</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 6</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">
+					Trek from Bhagwabasa – Roopkund Lake – Bedni Bugyal (via Bhagwabasa)
+Roopkund Lake, Human Skeletons, Mt. Trishul, Gangotri Ranges
+<br><br>
+After four days of continuous trekking, today you will be at the most fascinating day of the trek! Starting with an early morning breakfast, today you will be trekking to the mysterious Roopkund Lake. This uninhabited landmark in the laps of Mt. Trishul has overwhelmed many travellers with its innumerable stories. From here, trek for another half hour to reach Junar Gali, the highest point on this trail, and trek back to the base camp at Bedni Bugyal via Bhagwabasa. Witness the captivating Garhwal Himalayas in full glory extending up to Gangotri; overnight stay in Bedni Bugyal.
+
+				</p>
+			</div>
+		</div>
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 7</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">
+					Trek from Bedni Bugyal to Lohajung (via Wan)
+Trekking, Rhododenron forests, alpine meadows
+<br><br>
+As you start your return trek, bid goodbye to an unforgettable experience as you can capture a glimpse of Mt. Trishul from Bedni Bugyal on a clear day from Kanakdhar, en route Wan. Follow steep descents, gradual climbs through forests packed with blooming rhododendrons. After a steep descent for the Neel Ganga, arrive at Wan. From here, you’ll drive to Lohajung. Spend the night here.
+				</p>
+			</div>
+		</div>
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 8</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">
+					Departure
+Lohajung Exploration, Roopkund Trekking Tour Ends Here
+<br><br>
+Today will be your last day in the Himalayas! Spend the day looking around Lohajung.
+				</p>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<a href="#">
+		<div class="enquire">
+			ENQUIRE NOW
+		</div>
+	</a>
+</div>
+
+<div class="comments">
+	<h1 class="heading2">Top Reviews of Roopkund Trek</h1>
+	<div class="positioncomment">
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				5.0
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea corrupti pariatur illo officiis distinctio accusantium aperiam voluptate amet quidem nihil, illum reprehenderit nulla libero ducimus iste eum labore veritatis, ex 
+		</p>
+	</div>
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star "></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				4.0
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, perspiciatis qui illo accusamus repellendus, pariatur iste eum voluptate. Praesentium qui nobis nam ullam eaque nostrum voluptatibus nihil doloremque in q
+		</p>
+	</div>
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star half"></div>
+					<div class="star "></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				3.5
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quod facere, ducimus veniam doloremque mollitia excepturi libero natus dolor. Harum minus sed quidem, quam repellendus, deserunt iste alias
+		</p>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+
+input[type="submit"]{
+    font-size: 20px;
+    background-color:#0984e3;
+    padding:10px 35px;
+    color:white;
+    border:none;
+    margin: 10px 40%;
+    cursor:pointer;
+    border-radius: 50px;
+}
+
+input[type="submit"]:hover{
+    background-color:#54a0ff;
+}
+
+.box {
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 30px 60px;
+    width:600px;
+    margin:100px auto;
+    padding-right: 80px;
+    box-shadow:3px 3px 10px;
+}
+
+body{
+    background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), url('images/travel3.jpg');
+    background-repeat:none;
+    background-attachment:fixed;
+    background-size:cover;
+}
+
+.text{
+    font-size:20px;
+    font-family:Helvetica;
+}
+
+img{
+    width:160px;
+}
+
+.name-email{
+    transform:translate(200px,-90px);
+    margin-bottom: -85px;
+}
+
+.content-section{
+    margin-top: 50px;
+}
+
+p{
+    color:red;
+    font-size: 20px;
+}
+
+
+.nav{
+    display:inline-flex;
+    justify-content: space-between;
+    background-color:#22a6b3;
+    width:100%;
+    z-index: 1;
+    position: fixed;
+    top:0px; 
+    overflow: hidden;
+}
+.left{
+    float:right;
+
+}
+ul{
+    width:100%;
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    
+}
+li {
+    float:left;
+    *margin:10px;
+    transition:0.2s ease-in;
+}
+
+
+li.trans:hover {
+    transform:scale(1.1);
+}
+
+
+li a{
+    overflow: hidden;
+    text-decoration:none;
+    display:block;
+    width:11.5vw;
+    background-color:#22a6b3;
+    text-align:center;
+    color:white;
+    padding:20px;
+    font-size:20px;
+    box-sizing:border-box;
+}
+
+li a.active{
+    background-color:#6ab04c;
+}  
+
+
+li a:hover:not(.active){
+    background-color:#7ed6df;
+    
+    
+}
+a:link{
+    text-decoration: none;
+    margin:0;
+}
+
+.searchbox{
+    text-decoration:none;
+    width:200px;
+    background-color:#22a6b3;
+    padding:17px;
+    font-size:20px;
+    box-sizing:border-box;
+}
+
+.searchbtn{
+    text-decoration:none;
+    width:60px;
+    background-color:#22a6b3;
+    padding:17px;
+    font-size:20px;
+    box-sizing:border-box;
+}
+
+.search{
+    float: left;
+}
+
+
+table {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+  }
+
+
+td, th {
+    border: 1px solid black;
+    padding: 8px;
+  }
+
+tr:nth-child(even){background-color: #d3c7c7;}
+
+tr:nth-child(odd){background-color: white;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ;
+    color: white;
+  }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TravelSmart</title>
+
+        <!-- logo -->
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='logo2.jpg') }}">
+
+        <style>
+            body{ 
+                  background-image:url("{{ url_for('static',filename='img 5.jpg')}}");
+                  background-repeat:none;
+                  background-attachment:fixed;
+                  background-size:cover;
+                }
+            .button{
+                color:white;
+                padding:30px 50px;
+                text-align:center;
+                display: inline-block;
+                font-size:20px;
+                margin:4px  20px; 
+                float:right;
+                border:none;
+                text-decoration:none;
+                cursor:pointer;
+                border-radius:5px;
+            }    
+            .log{
+                background-color:#009432;
+            }
+            .log:hover{
+                background-color:#6ab04c;
+            }
+            .sign{
+                background-color:#2980b9;
+            }
+            
+            .sign:hover{
+                background-color:#3498db;
+            }
+            div{
+                position:absolute;
+            top:30%;
+            left:50%;   
+            transform:translate(-50%,-50%);
+            }
+        </style>
+    </head>
+    <body>
+        <marquee width="100%" direction="left" style="font-size:40px; font-style:oblique; color:#eb4d4b">WELCOME TO "TRAVEL SMART". GET ON BOARD QUICKLY TO TRAVEL TO EXHILARITING LOCATIONS</marquee>
+        <div>
+        <a href="{{ url_for('register') }}"><button class="button sign">Sign Up</button></a>
+        <a href="{{ url_for('login') }}"><button class="button log">Login </button></a>
+        </div>
+    </body>
+</html>

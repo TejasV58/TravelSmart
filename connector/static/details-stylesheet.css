@@ -1,0 +1,380 @@
+
+
+ul li.nav{
+	margin:0;
+	list-style-type: none;
+	font-size: 2.5vh;
+	display:inline-block;
+	padding:1.5em 3vw;
+	transition: 0.3s ease-in;
+}
+ul.navbar-l{
+	margin:0;
+	padding:0;
+}
+
+ul.navbar-l a{
+	margin:0;
+}
+
+div.navbar{
+	margin:0;
+	padding:0;
+	display:flex;
+	background:#22a6b3;
+	justify-content:space-between; 
+	margin:0px;
+}
+.search{
+	display: inline-flex;
+	padding:12px;
+	margin:6px;
+}
+
+.sbutton button{
+	font-size: 25px;
+	border:none;
+	cursor: pointer;
+}
+
+input[type="search"]{
+	font-size: 25px;
+}
+a:link{
+	color:white;
+    text-decoration: none;
+    margin:0;
+}
+a:visited{
+	color:white;
+}
+a li:not(.active){
+	background:#22a6b3;
+	color:white;
+}
+a li:hover:not(.active){
+	background:rgb(8, 115, 132);
+	color:white;
+}
+li.active{
+	background:#06494e; 
+	color:white;
+}
+.photo-container{
+    margin-top:200px;
+    width:90%;
+    height:500px;
+    margin: 20px auto;
+    position:relative;
+    top:15px;
+    background-size: cover;
+}
+
+.photos{
+    display:none;
+    background-size: cover;
+}
+.caption{
+    position:absolute;padding:8px 12px;
+    color:white;
+    bottom:10px;
+    left:50;
+    font-size: 4vh;
+    width:100%;
+    text-align:center;
+}
+.next, .prev{
+    position:absolute;
+    color:white;
+    top:210px;
+    font-size: 30px;
+    padding:16px;
+    user-select: none;
+    border-radius: 0 3px 3px 0;
+    transition: 0.6s ease;
+}
+.next{
+    right:0;
+    border-radius: 3px 0 0 3px;
+}
+.next:hover,.prev:hover{
+    background:rgba(0,0,0,0.5);
+}
+
+.dot{
+    cursor:pointer;
+    height:15px;
+    width:15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+.fades {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fades {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.main{
+    box-shadow: 5px 5px 30px black;
+    width:80vw;
+    margin:0 auto;
+    margin-top:50px;
+    margin-bottom: 20px;
+}
+ .information{
+    margin:20px;
+ }
+
+ .heading{
+    font-family: 'Poppins', sans-serif;
+    color:red;
+    background-color: lightblue;
+    display:block;
+    border-radius: 5px;
+    padding:5px;
+    font-size:25px;
+ }
+ ul li{
+    list-style-type: none;
+ }
+ li i.fa-check{
+    color:rgba(3, 145, 22, 0.81);
+    font-size: 18px;
+    margin-right:10px;
+    margin-left: -20px;
+ }
+.imp-points{
+    margin-bottom:15px;
+    display:inline-flex;
+}
+.point1{
+    width:35vw;
+    box-sizing: border-box;
+    padding:10px;
+    border-radius: 10px;
+    box-shadow: -4px 4px 10px grey;
+}
+.point2{
+    margin-left:25px;
+    width:40vw;
+    box-sizing: border-box;
+    padding:10px;
+    border-radius: 10px;
+    box-shadow: -4px 4px 10px grey;
+}
+.facility{
+    display:inline-block;
+    position :relative;
+    margin:0 10px;
+}
+.facilities{
+    margin:10px;
+    margin-top:40px;
+}
+.heading1{
+    font-family: 'Poppins', sans-serif;
+    font-size:25px;
+    background:rgba(255, 190, 61, 0.3);
+    color:red;
+    border-radius: 5px;
+    padding:5px;
+}
+
+.icons{
+    margin:0px auto;
+    opacity: 0.7;
+}
+.icondesc{
+    text-align: center;
+    margin:0;
+}
+
+
+
+.hotel{
+    border:1px solid black;
+}
+.hotels-info{
+    position:relative;
+    margin:5px 10px;
+    padding:10px;
+}
+.hotel-data{
+    font-size:20px;
+    font-family: 'Merriweather', serif;
+}
+#hotel-name{
+    width:35%;
+    position:absolute;
+    top:10px;
+    left:17vw;
+}
+#ratings{
+    position:absolute;
+    top:5px;
+    left:44vw;
+}
+x-star-rating{
+    font-family: "Ionicons"; 
+    font-size: 30px;
+    display:inline-flex;
+}
+x-star-rating > .star::after{
+    content:"\f3ae";
+    content:"\f2fc";
+    color:lightgrey;
+}
+x-star-rating > .star.full::after{
+    content:"\f2fc";
+    color:rgba(250, 217, 0, 1);
+}
+x-star-rating > .star.half::after{
+    content:"\f3ad";
+    color:rgba(250, 217, 0, 1);
+}
+#nights{
+    position:absolute;
+    right:2vw;
+    top:10px;
+    color:red;
+}
+
+
+
+.day-info{
+    position:relative;
+    margin: 1vh;
+}
+.day-no{
+    display:inline-block;
+    background:rgba(0,0,0,0.6);
+    color:white;
+    border-radius: 15px;
+    padding:10px;
+    font-size: 25px;
+ 
+}
+.daydetails{
+    display:inline-block;
+    width:60vw;
+    background-color: rgba(0,0,0,0.3);
+    padding:20px;
+    border-radius: 0px 30px 30px 30px;
+}
+ .details{
+    white-space: pre-line;
+    word-wrap: break-word;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.highlights{
+    font-family: 'Comic Neue', cursive;
+    font-size: 25px;
+}
+.enquire-div{
+    margin:20px auto;
+}
+.enquire{
+    display:inline-block;
+    background:#cb2525ed;
+    margin:20px 35vw;
+    padding:15px;
+    text-align: center;
+    border-radius: 10px;
+}
+.enquire:hover{
+    background:rgba(215, 15, 15, 0.9);
+}
+
+
+.comments{
+    background:white;
+    box-shadow: 5px 5px 30px black;
+    width:81%;
+    margin:20px auto;
+    margin-bottom:100px;
+    padding-bottom: 40px;
+}
+.heading2{
+    color:red;
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    display:inline-block;
+    margin:20px;
+    margin-bottom: 0;
+    margin-left:3%;
+}
+.positioncomment{
+    padding-left: 5%;
+    padding-right:5%;
+    display:flex;
+    flex-direction:column;
+    width:100%;
+
+}
+.comment{
+    width:80%;
+    padding:8px;
+    margin:20px;
+    box-shadow: 2px 2px 5px grey;
+    padding:10px;
+}
+.user-info{
+    position:relative;
+}
+.userphoto {
+    margin:5px;
+    margin-top:10px;
+    overflow:hidden;
+    background-color: lightgrey;
+    height:78px;
+    width:78px;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+}
+img.userimage{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+.user-name{
+    position:absolute;
+    top:-2%;
+    left:10%;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+.ratings{
+    position: absolute;
+    top:20%;
+    left:10%;
+}
+.text{
+    white-space: pre-line;
+    text-indent: 0px;
+    word-wrap: break-word;
+    padding:10px;
+    padding-top:0;
+    padding-bottom: 2px;
+    margin-top:-2.5%;
+    margin-left: 9%;
+    font-size: 16px;
+}
+.addcomment{
+    margin:40px;
+    margin-bottom: 40px;
+}
+.rate-label{
+    font-size:22px;
+}

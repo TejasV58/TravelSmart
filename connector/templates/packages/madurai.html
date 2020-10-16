@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Madurai Rameshwaram Kanyakumari</title>
+	<link rel="stylesheet" href="./details-stylesheet.css">
+	 <!-- logo -->
+    <link rel="shortcut icon" type="image/png" href="../images/logo1.jpg">
+
+	<!--icons -->
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!--fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Girassol&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<style>
+		#image1{
+			background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../religious-packages/madurai.jpg");
+			width:100%;
+			height:100%;
+			background-size: cover;
+			background-position: center;
+        }
+
+        #image2{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../religious-packages/madurai1.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image3{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../religious-packages/ramnath1.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image4{
+			background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../religious-packages/kanyakumari1.jpg");
+			width:100%;
+			height:100%;
+			background-size: cover;
+			background-position: center;
+        }
+
+        #image5{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../religious-packages/meenakshitemple.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image6{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../religious-packages/rameshwaram.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+        #image7{
+			background-image:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  url("../religious-packages/ramnath.jpg");
+			height:100%;
+			width:100%;
+			background-position: center;
+        }
+
+	</style>
+</head>
+<body>
+
+<div class=navbar>
+
+	<ul>
+		<a href="home.html" id="home"><li class="nav">Home</li></a>
+		<a href="#"><li class="nav">Hotel</li></a>
+		<a href="#"><li class="nav">Flight</li></a>
+		<a href="#"><li class="nav">Holidays</li></a>
+		<a href="#"><li class="nav">Help</li></a>
+	</ul>
+	<div class="search">
+		<form action="">
+			<input type="search" name="search" placeholder="Search...">
+		</form>
+	</div>
+	<div class="sbutton">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+
+</div>
+
+
+
+<div class="main">
+	<div class="photo-container">
+
+		<div class="photos fade" id="image1">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image2">
+		    <div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image3">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image4">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image5">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image6">
+			<div class="caption"></div>
+		</div>
+
+		<div class="photos fade" id="image7">
+			<div class="caption"></div>
+		</div>
+
+
+		<a href="#" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a href="#" class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+
+	<div style="text-align:center">
+  		<span class="dot" onclick="currentSlide(1)"></span>
+  		<span class="dot" onclick="currentSlide(2)"></span>
+  		<span class="dot" onclick="currentSlide(3)"></span>
+  		<span class="dot" onclick="currentSlide(4)"></span>
+  		<span class="dot" onclick="currentSlide(5)"></span>
+  		<span class="dot" onclick="currentSlide(6)"></span>
+  		<span class="dot" onclick="currentSlide(7)"></span>
+  		
+	</div>
+
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("photos");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		      dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		}
+	</script>
+
+	<div class="information">
+		<div class="imp-points">
+			<div class="point1">
+				<h1 class="heading1">Highlights</h1>
+					<p class="details">
+						<ul class=" highlights">
+							<b>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Enshrined Kanyakumari Mandir</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Delightining Subramanium Temple</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Architectural Ramnath Temple</li>
+								<li><i class="fa fa-check" aria-hidden="true"></i>Historic Meenaksi Temple</li>
+  								<li><i class="fa fa-check" aria-hidden="true"></i>Vivekananda Rock Memorial</li>
+							</b>
+						</ul>
+					</p>
+			</div>
+			<div class="point2">
+				<h1 class="heading1">Facilities</h1>
+				<div class="facilities">
+					<div class="facility">
+						<img src="../icons/breakfast.png" alt="" class="icons">
+						<p class="icondesc">Breakfast</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/dinner1.png" alt="" class="icons">
+						<p class="icondesc">Dinner</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/hotel.png" alt="" class="icons">
+						<p class="icondesc">Hotel</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/taxi.png" alt="" class="icons">
+						<p class="icondesc">Travel</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/sightseeing.png" alt="" class="icons">
+						<p class="icondesc">Sightseeing</p>
+					</div>
+					<div class="facility">
+						<img src="../icons/guide.png" alt="" class="icons">
+						<p class="icondesc">Guide</p>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+		<h1 class="heading">Hotel details</h1>
+
+		<div class="hotel">
+			<div class="hotels-info">
+				<div class="hotel-data" id="location">Madurai</div>
+				<div class="hotel-data" id="hotel-name">hotel name</div>
+				<div class="hotel-data" id="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star "></div>
+				</x-star-rating>
+				</div>
+				<div class="hotel-data" id="nights">1 nights</div>
+			</div>
+			<hr>
+			<div class="hotels-info">
+				<div class="hotel-data" id="location">Madurai</div>
+				<div class="hotel-data" id="hotel-name">hotel name</div>
+				<div class="hotel-data" id="ratings">
+					<x-star-rating>	
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star "></div>
+						<div class="star "></div>
+					</x-star-rating>
+				</div>
+				<div class="hotel-data" id="nights">2 nights</div>
+			</div>
+			<hr>
+			<div class="hotels-info">
+				<div class="hotel-data" id="location">Kanyakumari</div>
+				<div class="hotel-data" id="hotel-name">hotel name</div>
+				<div class="hotel-data" id="ratings">
+					<x-star-rating>	
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star full"></div>
+						<div class="star half"></div>
+						<div class="star "></div>
+					</x-star-rating>
+				</div>
+				<div class="hotel-data" id="nights">1 nights</div>
+			</div>
+			
+		</div>
+
+		<h1 class="heading">Overview</h1>
+			<p class=details>
+				Golden Triangle tour package spanning over the period of 4 days is your golden ticket to explore the rich heritage, history and culture of India, a cultural razmatazz coupled with unhurried luxury.
+			<br><br>
+				From an array of UNESCO World Heritage SItes to some resplendent forts and palaces in Rajsathan and from the colorful bazaars of Jaipur to the shimmering Taj Mahal in Agra, this tastefully crafted golden triangle tour itinerary is your shortcut to the very soul of India.
+			</p>
+		<h1 class="heading">Itinerary</h1>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 1</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Arrive at Madurai, report to coach & proceed to hotel. Evening visit light & sound show & Mahatma Gandhi Museum</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 2</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Visit Meenakshi temple - Madurai's claim to fame for its meticulous colorful carvings on the Gopurams (towers), in the vivid Dravidian image of Gods, Goddess, animal and mythical figures. Later proceed to Rameshwaram.</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 3</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Early morning take Shpatik linga Darshan at the famous Ramanathan temple - a Master Piece in Dravidian Architecture. Proceed to Kanyakumari via Tiruchendur – the sea shore temple of Subrahmanyam, is one of the delightful spots sanctified and venerated by every Hindu. Arrive in Kanyakumari. Enjoy sunset in the evening. </p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 4</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">Visit Swami Vivekanand Rock Memorial. Visit the meditation hall and the smarak. Visit Kanyakumari mandir (One of the Fifty Two Shakti Peethas), Tri smudra milan & Gandhi mandapam. Evening visit Suchindram temple. (One of the Fifty Two Shakti Peethas). Proceed to Trivendrum. Arrive in Trivendrum.</p>
+			</div>
+		</div>
+
+		<div class="day-info">
+			<div>
+				<h1 class="day-no">DAY 5</h1>
+			</div>
+			<div class="daydetails">
+				<p class="details">In the morning Visit Padmanabh Swami Temple, Raja Ravi Varma Art Gallery and Napier Museum (subject to operation). Proceed to Trivendrum Airport. Board the flight to your Home Town. Tour Concludes.</p>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<a href="#">
+		<div class="enquire">
+			ENQUIRE NOW
+		</div>
+	</a>
+</div>
+
+<div class="comments">
+	<h1 class="heading2">Top Reviews of Madurai-Rameshwaram-Kanyakumari yatra</h1>
+	<div class="positioncomment">
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				5.0
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea corrupti pariatur illo officiis distinctio accusantium aperiam voluptate amet quidem nihil, illum reprehenderit nulla libero ducimus iste eum labore veritatis, ex 
+		</p>
+	</div>
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star "></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				4.0
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, perspiciatis qui illo accusamus repellendus, pariatur iste eum voluptate. Praesentium qui nobis nam ullam eaque nostrum voluptatibus nihil doloremque in q
+		</p>
+	</div>
+	<div class="comment">
+		<div class="user-info">
+			<div class="userphoto">
+				<img class="userimage" src="../icons/guide1.png" alt="user-image">
+			</div>
+			<p class="user-name">Firstname Surname</p>
+			<div class="ratings">
+				<x-star-rating>	
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star full"></div>
+					<div class="star half"></div>
+					<div class="star "></div>
+			    </x-star-rating>
+			</div>
+			<div class="ratingbox">
+				3.5
+			</div>
+		</div>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quod facere, ducimus veniam doloremque mollitia excepturi libero natus dolor. Harum minus sed quidem, quam repellendus, deserunt iste alias
+		</p>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>

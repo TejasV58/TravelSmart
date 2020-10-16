@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TravelSmart - TravelerDetails</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'traveller_details_style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+         <!-- logo -->
+         <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='logo2.jpg') }}">
+
+        <style>
+           
+        </style>
+        
+    </head>
+    <body>
+        <div class='nav'>
+            <ul>
+                <li class="trans"><a href="{{ url_for('home') }}" ><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li class="trans"><a href="#">Hotel</a></li>
+                <li class="trans"><a href="#"><i class="fa fa-plane" style="font-size:21px; margin-right:20px;"></i>Flight</a></li>
+                <li class="trans"><a href="#">Help</a></li>
+                {% if current_user.email=='admin@gmail.com' %}
+                    <li class="trans"><a href="{{ url_for('admin') }}">Create Package</a></li>
+                {% endif %}
+                <div class="left">
+                    <li >
+                    <form>
+                            <div class="search searchbox">
+                                <input type="search" name="search" id="ser" placeholder="Search....">
+                            </div>
+                            <div class="search searchbtn">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="trans account"><a href="{{ url_for('account') }}"><img class="rounded-circle account-img" width="60px" height="50px;"  src="{{ image_file }} ">Account</a></li>
+                    <li class="trans"><a href="{{ url_for('logout') }}">Logout</a></li>
+                </div>    
+            </ul>
+        </div>  
+
+        <div class="box">
+            <h1 style="text-align:center; color:#EA2027; font-size:40px">Traveller Details</h1>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}                 
+                  
+                <div class="form-group">   
+                    {{ form.name.label(class="form-control-label text") }}
+
+                    {% if form.name.errors %}
+                        {{ form.name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>    
+                
+                <div class="form-group">
+                    {{ form.DOT.label(class="form-control-label text") }}
+                    
+                    {% if form.DOT.errors %}
+                        {{ form.DOT(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.DOT.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.DOT(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                  
+                <div class="form-group">
+                    {{ form.total_travellers.label(class="form-control-label text") }}
+                    
+                    {% if form.total_travellers.errors %}
+                        {{ form.total_travellers(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.total_travellers.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.total_travellers(class="form-control form-control-lg") }}
+                    {% endif %}
+               </div>
+                
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label text") }}
+                    
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+               </div>
+
+                <div class="form-group">
+                    {{ form.phnumber.label(class="form-control-label text") }}
+                    
+                    {% if form.phnumber.errors %}
+                        {{ form.phnumber(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.phnumber.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.phnumber(class="form-control form-control-lg") }}
+                    {% endif %}
+               </div>
+
+                
+
+                <div class="form-group">
+                    {{ form.submit(class="btn") }} 
+                </div>
+                
+                
+                </form>
+            
+                
+
+        </div>
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

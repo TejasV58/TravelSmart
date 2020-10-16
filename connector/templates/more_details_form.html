@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>TravelSmart - CreatePackageDetails</title>
+         <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- logo -->
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='logo2.jpg') }}">
+
+        <style>
+            
+            body{
+                background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url("{{ url_for('static', filename='images/travel12.jpg')  }}");
+                background-repeat:none;
+                background-attachment:fixed;
+                background-size:cover;
+            }
+        
+            label{
+                font-size: 17px;
+            }
+            .form1{
+                border-radius: 30px;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 40px 75px;
+                width:600px;
+                margin:100px auto;
+                box-shadow:3px 3px 10px;
+            }
+
+            .form-control:focus{
+                color: #495057;
+                background-color: #fff;
+                border-color: #007bff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem #008cff4a;
+            }
+
+            input[type="submit"]{
+                font-size: 20px;
+                background-color:#0984e3;
+                padding:10px 35px;
+                color:white;
+                border:none;
+                margin: 10px 30%;
+                cursor:pointer;
+                border-radius: 50px;
+            }
+            .form-control.is-invalid, .was-validated .form-control:invalid{
+                border-width: 1.2px;
+                border-color: #ef717d;
+            }
+            .form-control.is-invalid:focus, .was-validated .form-control:invalid:focus{
+                border-color: #dc3545;
+                box-shadow: 0 0 0 0.2rem rgba(241, 22, 43, 0.25);
+            }
+            .invalid-feedback {
+                display: none;
+                width: 100%;
+                margin-top: .25rem;
+                font-size: 86%;
+                color: #e50016;
+                font-weight: 500;
+            }
+            .radio-inline ul{
+                padding:0;
+            }
+            .radio-inline li{
+                margin:10px;
+                display: inline-block;
+                list-style-type: none;
+            }
+            small{
+                font-size: 15px;
+            }
+
+            
+		.day_no{
+			width:3vw;
+			margin:1px;
+			}
+		.day_details{
+			width:25vw;
+			margin:0.5px;
+            text-align: center;
+		}
+
+        
+		
+		
+		.remove{
+			width:5vw;
+		}
+            
+        </style>
+    </head>
+    <body>
+        <div class="form1">
+            <h1 style="text-align:center; color:#EA2027; font-size:40px ;margin-bottom: 20px">More Details</h1>
+            <form method="POST" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.highlight1.label(class="form-control-label") }}
+
+                    {% if form.highlight1.errors %}
+                        {{ form.highlight1(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.highlight1.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.highlight1(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.highlight2.label(class="form-control-label") }}
+
+                    {% if form.highlight2.errors %}
+                        {{ form.highlight2(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.highlight2.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.highlight2(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.highlight3.label(class="form-control-label") }}
+
+                    {% if form.highlight3.errors %}
+                        {{ form.highlight3(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.highlight3.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.highlight3(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.highlight4.label(class="form-control-label") }}
+                    {% if form.highlight4.errors %}
+                        {{ form.highlight4(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.highlight4.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.highlight4(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div><br>
+
+                <p>Facilities Offered</p>
+                <div class=" form-check form-check-inline">
+                    {{ form.facility1(class="form-check-input") }}
+                    {{ form.facility1.label(class="form-check-label") }}
+                    
+                    
+                </div>
+                <div class=" form-check form-check-inline">
+                    {{ form.facility2(class="form-check-input") }}
+                    {{ form.facility2.label(class="form-check-label") }}
+                    
+                    
+                </div>
+                <div class=" form-check form-check-inline">
+                    {{ form.facility3(class="form-check-input") }}
+                    {{ form.facility3.label(class="form-check-label") }}
+                    
+                </div>
+
+                <div class="form-group form-check-inline">
+                    {{ form.facility4(class="form-check-input") }}
+                    {{ form.facility4.label(class="form-check-label") }}
+                    
+                    
+                </div>
+
+                <div class="form-group form-check-inline">
+                    {{ form.facility5(class="form-check-input") }}
+                    {{ form.facility5.label(class="form-check-label") }}
+                    
+                    
+                </div>
+
+                <div class="form-group form-check-inline">
+                    {{ form.facility6(class="form-check-input") }}
+                    {{ form.facility6.label(class="form-check-label") }}
+                </div>
+                <br><br>
+
+                <div class="form-group">
+                    {{ form.hotel_location1.label(class="form-control-label") }}
+                    {% if form.hotel_location1.errors %}
+                        {{ form.hotel_location1(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_location1.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_location1(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_name1.label(class="form-control-label") }}
+                    {% if form.hotel_name1.errors %}
+                        {{ form.hotel_name1(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_name1.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_name1(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_stay1.label(class="form-control-label") }}
+                    {% if form.hotel_stay1.errors %}
+                        {{ form.hotel_stay1(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_stay1.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_stay1(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_rating_1.label(class="form-control-label") }}
+                    {% if form.hotel_rating_1.errors %}
+                        {{ form.hotel_rating_1(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_rating_1.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_rating_1(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_location2.label(class="form-control-label") }}
+                    {% if form.hotel_location2.errors %}
+                        {{ form.hotel_location2(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_location2.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_location2(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_name2.label(class="form-control-label") }}
+                    {% if form.hotel_name2.errors %}
+                        {{ form.hotel_name2(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_name2.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_name2(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_stay2.label(class="form-control-label") }}
+                    {% if form.hotel_stay2.errors %}
+                        {{ form.hotel_stay2(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_stay2.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_stay2(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_rating_2.label(class="form-control-label") }}
+                    {% if form.hotel_rating_2.errors %}
+                        {{ form.hotel_rating_2(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_rating_2.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_rating_2(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_location3.label(class="form-control-label") }}
+                    {% if form.hotel_location3.errors %}
+                        {{ form.hotel_location3(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_location3.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_location3(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_name3.label(class="form-control-label") }}
+                    {% if form.hotel_name3.errors %}
+                        {{ form.hotel_name3(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_name3.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_name3(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_stay3.label(class="form-control-label") }}
+                    {% if form.hotel_stay3.errors %}
+                        {{ form.hotel_stay3(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_stay3.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_stay3(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.hotel_rating_3.label(class="form-control-label") }}
+                    {% if form.hotel_rating_3.errors %}
+                        {{ form.hotel_rating_3(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hotel_rating_3.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hotel_rating_3(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.overview.label(class="form-control-label") }}
+                    {% if form.overview.errors %}
+                        {{ form.overview(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.overview.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.overview(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+
+                <div class="form-group">
+                    {{ form.image_file1.label(class="form-control-label") }}
+                    {% if form.image_file1.errors %}
+                        {{ form.image_file1(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.image_file1.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.image_file1(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.image_file2.label(class="form-control-label") }}
+                    {% if form.image_file2.errors %}
+                        {{ form.image_file2(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.image_file2.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.image_file2(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.image_file3.label(class="form-control-label") }}
+                    {% if form.image_file3.errors %}
+                        {{ form.image_file3(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.image_file3.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.image_file3(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.image_file4.label(class="form-control-label") }}
+                    {% if form.image_file4.errors %}
+                        {{ form.image_file4(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.image_file4.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.image_file4(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+
+                
+            </form>
+        </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
+    </body>
+</html>

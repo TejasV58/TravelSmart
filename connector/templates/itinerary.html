@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TravelSmart - Itinerary</title>
+
+        <!-- logo -->
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='logo2.jpg') }}">
+
+
+         <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+        <style>
+            
+            body{
+                background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url("{{ url_for('static', filename='images/user.jpg')  }}");
+                background-repeat:none;
+                background-attachment:fixed;
+                background-size:cover;
+            }
+        
+            label{
+                font-size: 17px;
+            }
+            .form1{
+                border-radius: 30px;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 40px 75px;
+                width:600px;
+                margin:100px auto;
+                box-shadow:3px 3px 10px;
+            }
+
+            .form-control:focus{
+                color: #495057;
+                background-color: #fff;
+                border-color: #007bff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem #008cff4a;
+            }
+
+            input[type="submit"]{
+                font-size: 20px;
+                background-color:#0984e3;
+                padding:10px 35px;
+                color:white;
+                border:none;
+                margin: 10px 30%;
+                cursor:pointer;
+                border-radius: 50px;
+            }
+            .form-control.is-invalid, .was-validated .form-control:invalid{
+                border-width: 1.2px;
+                border-color: #ef717d;
+            }
+            .form-control.is-invalid:focus, .was-validated .form-control:invalid:focus{
+                border-color: #dc3545;
+                box-shadow: 0 0 0 0.2rem rgba(241, 22, 43, 0.25);
+            }
+            .invalid-feedback {
+                display: none;
+                width: 100%;
+                margin-top: .25rem;
+                font-size: 86%;
+                color: #e50016;
+                font-weight: 500;
+            }
+            small{
+                font-size: 15px;
+            }
+
+            
+		.day_no{
+			width:3vw;
+			margin:1px;
+			}
+		.day_details{
+			width:25vw;
+			margin:0.5px;
+            text-align: center;
+		}
+
+        
+		
+		
+		.remove{
+			width:5vw;
+		}
+            
+        </style>
+    </head>
+    <body>
+        <div class="form1">
+            <h1 style="text-align:center; color:#EA2027; font-size:40px ;margin-bottom: 20px">More Details</h1>
+            <form method="POST" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <b>Itinerary</b>
+				    <br><br>
+                        <div class="form-group">   
+                            {{ form.totaldays.label(class="form-control-label text") }}
+
+                            {% if form.totaldays.errors %}
+                                {{ form.totaldays(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.totaldays.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.totaldays(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>    
+
+					  	<table id="extra-table">
+						    <tr>
+						        <th class="day_no">Day Number</th>
+						        <th class="day_details">Day Details</th>
+						    </tr>
+						    <button type="button" class="btn btn-info" onclick="addExtraRow()">
+						        Add Row <i class="fas fa-plus"></i>
+						    </button><br>
+    					    {% for itinerary in form.itineraries %}
+						    <tr >
+						        <td>
+						        	{% if itinerary.day_number.errors %}
+	                        		{{ itinerary.day_number(class="form-control form-control-lg is-invalid") }}
+			                        <div class="invalid-feedback">
+			                            {% for error in itinerary.day_number.errors %}
+			                                <span>{{ error }}</span>
+			                            {% endfor %}
+			                        </div>
+	                    			{% else %}
+	                        		{{ itinerary.day_number(class="form-control form-control-lg") }}
+	                    			{% endif %}</td>
+
+						        <td>{% if itinerary.day_details.errors %}
+	                        		{{ itinerary.day_details(class="form-control form-control-lg is-invalid") }}
+			                        <div class="invalid-feedback">
+			                            {% for error in itinerary.day_details.errors %}
+			                                <span>{{ error }}</span>
+			                            {% endfor %}
+			                        </div>
+	                    			{% else %}
+	                        		{{ itinerary.day_details(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </td>
+
+						        
+						        <td>
+						            <button type="button" class="btn btn-danger"
+						                    onclick="removeExtraRow(this)">
+						                Remove <i class="fas fa-minus"></i>
+						            </button>
+						        </td>
+						    </tr>
+						    {% endfor %} 
+						</table>
+						<br>
+
+                
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+
+                
+            </form>
+        </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript">
+    	// Function to add a row to the Extra Properties Table
+function addExtraRow() {
+   let table = document.getElementById("extra-table");
+    let length = table.rows.length;
+    let row = table.insertRow(-1);
+    let DayNoCell = row.insertCell(0);
+    let DayDetailCell = row.insertCell(1);
+    let ButtonCell= row.insertCell(2);
+    DayNoCell.innerHTML = "<span class=\"bmd-form-group is-filled\"><input class=\"form-control\" id=\"itineraries-" + length + "-day_number\" name=\"itineraries-" + length + "-day_number\" required=\"\" type=\"text\" value=\"\"></span>";
+    DayDetailCell.innerHTML = "<textarea class=\"form-control\" id=\"itineraries-" + length + "-day_details\" name=\"itineraries-" + length + "-day_details\"  required=\"\" type=\"textarea\" value=\"\" rows=\"1\">";
+    ButtonCell.innerHTML = "<button type=\"button\" class=\"btn btn-danger\" onclick=\"removeExtraRow(this)\"> Remove <i class=\"fas fa-minus\"></i> </button>";
+}
+// Function to remove a row from the extra properties table
+function removeExtraRow(x) {
+    let i = x.parentNode.parentNode["rowIndex"];
+    let table = document.getElementById("extra-table");
+    table.deleteRow(i);
+}
+</script>
+    </body>
+</html>

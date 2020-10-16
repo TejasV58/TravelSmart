@@ -1,0 +1,182 @@
+{% extends 'categories/layout1.html' %}
+
+
+{% block content %}
+
+    {% for package in packages %}
+    <div class="packages" id=pack1>
+        <img class=pack-img src="{{ url_for('static',filename='package-images/' + package.image_file ) }}" alt="hot-air-balloon" >
+        <div class=img-desc>
+            <p class="desc">{{ package.title }}</p>
+            <p class=duration>duration: {{ package.duration }}</p>
+            <p class="cost">₹{{ package.cost }} per person</p>
+
+            {% if ratings %}
+                {% for r in ratings %}
+                    {% if r.id==package.id %}
+                        <div class="hotel-data" id="ratings">
+                            <x-star-rating> 
+                                {% for stars in range(r.rating) %}
+                                    <div class="star full"></div>
+                                {% endfor %}
+                                {% for stars in range(5 - r.rating)  %}
+                                <div class="star"></div>
+                                {% endfor %}
+                            </x-star-rating>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="middle">
+            <ul>
+                <li class="info">{{ package.info1 }}</li>
+                <li class="info">{{ package.info2 }}</li>
+                <li class="info">{{ package.info3 }}</li>
+
+                {% if package.info4 %}
+                 <li class="info">{{ package.info4 }}</li>
+                {% endif %}
+               
+                {% if package.info5 %}
+                <li class="info">{{ package.info5 }}</li>
+                {% endif %}
+            </ul>
+        </div>
+        <div>
+            <a href="{{ url_for('packagedetails', package_id=package.id, category=package.category) }}" target="_blank" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+
+
+   
+
+
+
+    <div class="packages" id=pack3>
+    	<img class=pack-img src="{{url_for('static',filename='images/char-dham.png')}}" alt="char-dham" >
+    	<div class=img-desc>
+    		<p class="desc">Char Dham Yatra</p>
+    		<p class=duration>duration: 15 Days</p>
+    		<p class="cost">₹90,000 per person</p>
+            <div class="hotel-data" id="ratings">
+                <x-star-rating> 
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star "></div>
+                </x-star-rating>
+            </div>
+    	</div>
+    	<div class="middle">
+    		<ul>
+    			<li class="info">1</li>
+    			<li class="info">2</li>
+    			<li class="info">3</li>
+    			<li class="info">4</li>
+    		</ul>
+    	</div>
+        <div>
+            <a href="#" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+
+
+    <div class="packages" id=pack4>
+    	<img class=pack-img src="{{url_for('static',filename='images/kailash.jpg')}}" alt="Kailash" >
+    	<div class=img-desc>
+    		<p class="desc">Kailash Mansarovar Yatra</p>
+    		<p class=duration>duration: 12 Days</p>
+    		<p class="cost">₹1,80,000 per person</p>
+            <div class="hotel-data" id="ratings">
+                <x-star-rating> 
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star "></div>
+                </x-star-rating>
+            </div>
+ 		</div>  
+ 		<div class="middle">
+    		<ul>
+    			<li class="info">1</li>
+    			<li class="info">2</li>
+    			<li class="info">3</li>
+    			<li class="info">4</li>
+    		</ul>
+    	</div>
+        <div>
+            <a href="#" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+
+    <div class="packages" id=pack2>
+    	<img class=pack-img src="{{url_for('static',filename='images/madurai.jpg')}}" alt="madurai" >
+    	<div class=img-desc>
+    		<p class="desc"> Madurai Rameshwaram Kanyakumari</p>
+    		<p class=duration>duration: 5 Days | 4 Nights</p>
+    		<p class="cost">₹15,000 per person</p>
+            <div class="hotel-data" id="ratings">
+                <x-star-rating> 
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star "></div>
+                </x-star-rating>
+            </div>
+    	</div>
+    	<div class="middle">
+    		<ul>
+    			<li class="info">Tri Samudra Milan</li>
+    			<li class="info">Enshrined Kanyakumari Mandir</li>
+    			<li class="info">Delightining Subramanium Temple</li>
+    			<li class="info">Architectural Ramnath Temple</li>
+                <li class="info">Historic Meenaksi Temple</li>
+                <li class="info">Vivekananda Rock Memorial</li>
+    		</ul>
+    	</div>
+        <div>
+            <a href="package-details/madurai.html" target="_blank" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+    <div class="packages" id=pack1>
+    	<img class=pack-img src="{{url_for('static',filename='images/ashtavinayka.jpg')}}" alt="ashtavinayka" >
+    	<div class=img-desc>
+    		<p class="desc">Ashtavinayaka yatra</p>
+    		<p class=duration>duration: 3 Days | 2 Nights</p>
+    		<p class="cost">₹8,000 per person</p>
+            <div class="hotel-data" id="ratings">
+                <x-star-rating> 
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star full"></div>
+                    <div class="star "></div>
+                </x-star-rating>
+            </div>
+    	</div>
+    	<div class="middle">
+    		<ul>
+    			<li class="info">Famous 8 Ashtavinayaka Temples</li>
+    			<li class="info">Lord Khandoba Darshan</li>
+    			<li class="info">Free time for entertainment and Relaxation</li>
+    			<li class="info">All travels and sightseeing by A/C coach</li>
+    		</ul>
+    	</div>
+        <div>
+            <a href="package-details/ashtavinayaka.html" target="_blank" class="button"><p class="more">More details</p></a>
+        </div>
+    </div>
+
+{% endblock %}
+
